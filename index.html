@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vorbiz – Simple Sales Recording for Vendors</title>
+    <link rel="icon" href="enhanced_icon_512.png" sizes="any" />
+    <meta name="description" content="Vorbiz is a vendor‑facing sales recording app. Log sales fast, generate day and tax reports, and keep items organized with UPCs, variants, and quick buttons." />
+    <meta property="og:title" content="Vorbiz – Simple Sales Recording for Vendors" />
+    <meta property="og:description" content="Vendor‑only sales recording. Offline‑first. Fast item entry. Clean reports." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="feature-graphic.png" />
+    <meta name="theme-color" content="#0f172a" />
+    <style>
+        :root {
+            --bg:#043F3B; /* deep teal */
+            --card:#065F59; /* card teal */
+            --muted:#A5B9B3;
+            --text:#F7F9F9;
+            --accent:#00937A; /* brand teal */
+            --cta:#DB4814; /* action orange */
+            --ring:#44B299; /* focus ring */
+        }
+        *{box-sizing:border-box}
+        html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{opacity:.9}
+        header{position:sticky;top:0;background:rgba(11,16,32,.6);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid rgba(148,163,184,.2);z-index:10}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+        .brand{display:flex;gap:.6rem;align-items:center;font-weight:700}
+        .brand .dot{display:none} /* replaced with logo */
+        .brand .logo{width:22px;height:22px;border-radius:6px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+        .nav a{margin-left:18px;color:var(--text)}
+        .nav a.muted{color:var(--muted)}
+        .btn{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(219,72,20,.9),rgba(219,72,20,.82));color:var(--text);font-weight:600}
+        .btn:hover{box-shadow:0 0 0 3px rgba(96,165,250,.25)}
+        .hero{padding:72px 0}
+        .grid{display:grid;gap:22px}
+        @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr;align-items:center}}
+        .card{background:var(--card);border:1px solid rgba(148,163,184,.15);border-radius:18px;padding:22px}
+        h1{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 10px}
+        h2{font-size:clamp(22px,3vw,28px);margin:26px 0 10px}
+        h3{font-size:20px;margin:16px 0 8px}
+        p{color:var(--muted);margin:10px 0}
+        ul{padding-left:18px;color:var(--muted)}
+        .feature{display:grid;grid-template-columns:28px 1fr;gap:10px;margin:12px 0}
+        .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;background:rgba(148,163,184,.08);color:var(--text);font-size:14px}
+        .snapshots { display:grid; gap:16px; align-items:start; }
+        @media(min-width:700px){.snapshots{grid-template-columns:1fr 1fr}}
+        .shot{border-radius:16px;border:1px solid rgba(148,163,184,.2);overflow:hidden;background:transparent}
+        .shot img{display:block;width:100%;height:auto}
+        .kicker{letter-spacing:.12em;text-transform:uppercase;color:#a5b4fc;font-weight:700;font-size:12px}
+        footer{padding:40px 0;color:var(--muted)}
+        .muted{color:var(--muted)}
+        .section{padding:38px 0}
+        .legal{font-size:14px}
+        .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:13px;padding:.2rem .45rem;border:1px solid rgba(148,163,184,.3);border-bottom-width:2px;border-radius:6px;background:rgba(2,6,23,.6)}
+        .toc{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+        .toc a{padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;color:var(--muted)}
+        .toc a:hover{color:var(--text)}
+        .callout{border-left:3px solid var(--ring);padding:10px 14px;border-radius:10px;background:rgba(96,165,250,.08)}
+    </style>
+</head>
+<body>
+<header>
+    <div class="container nav">
+        <div class="brand"><img src="./assets/enhanced_icon_512.png" alt="" class="logo" /> Vorbiz</div>
+            <nav>
+                <a href="#features" class="muted">Features</a>
+                <a href="#screenshots" class="muted">Screenshots</a>
+                <a href="#privacy" class="muted">Privacy</a>
+                <a href="#download" class="btn">Get the app</a>
+            </nav>
+        </div>
+</header>
+
+<main class="container">
+    <section class="hero grid">
+        <div class="card">
+            <div class="kicker">Vendor‑only sales recording</div>
+            <h1>Record sales fast. Keep items tidy. File taxes without headaches.</h1>
+            <p>Vorbiz is a <strong>vendor‑facing</strong> app (not a customer POS) built for markets and pop‑ups. Create locations, add items with UPCs and variants, pin quick buttons, and scan labels to ring items in seconds. Reports summarize your day, date ranges, and sales tax by location.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+                <span class="chip">Offline‑first</span>
+                <span class="chip">Fast item entry</span>
+                <span class="chip">Clean reports</span>
+            </div>
+            <p id="download" class="callout" style="margin-top:16px">Coming to Google Play.</p>
+        </div>
+        <div>
+            <div class="shot"><img src="./assets/feature-graphic.png" alt="Vorbiz feature graphic" /></div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <h2>What the app does</h2>
+        <div class="card">
+            <h3>Locations</h3>
+            <p>Define where sales occur and which items are available there. Each location includes a <strong>name</strong>, <strong>address</strong>, and <strong>tax settings</strong>. Enable <strong>tax‑inclusive pricing</strong> if your listed price already includes tax; disable it to add tax on top.</p>
+
+            <h3>Items</h3>
+            <p>Create items with a <strong>name</strong>, <strong>price</strong>, and a <strong>UPC</strong> (12‑digit number). Vorbiz can generate a <strong>QR label</strong> from the UPC so it always scans back to the correct product. Toggle <strong>Quick Button</strong> for top sellers.</p>
+            <p>Add <strong>variants</strong> (e.g., 8oz / 12oz / 16oz) to keep your item list short. When an item has variants, the sale screen prompts you to pick the right option before adding it to the cart.</p>
+
+            <h3>Sale screen</h3>
+            <ul>
+                <li>Select the active location; any Quick Buttons appear for one‑tap adding.</li>
+                <li>If an item has variants, you'll choose the option first.</li>
+                <li>Built‑in label scanning adds items instantly.</li>
+            </ul>
+
+            <h3>Managing sales</h3>
+            <p>From the <strong>Sales List</strong>, you can update a sale's <strong>date</strong> or <strong>location</strong>. If line items or totals need changes, delete and recreate the sale with the correct details.</p>
+
+            <h3>Reporting</h3>
+            <ul>
+                <li><strong>Day Report</strong> – all sales for a single day.</li>
+                <li><strong>Date Range Report</strong> – summarized sales for any period.</li>
+                <li><strong>Sales Tax Report</strong> – tax collected by location for easy filing.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="screenshots" class="section">
+        <h2>Screenshots</h2>
+        <div class="snapshots">
+            <figure class="shot"><img src="./assets/screenshot1.jpg" alt="Vorbiz sale screen" /><figcaption class="muted" style="padding:10px">Sale screen with Quick Buttons and scanner</figcaption></figure>
+            <figure class="shot"><img src="./assets/screenshot2.jpg" alt="Vorbiz reporting screen" /><figcaption class="muted" style="padding:10px">Reporting overview (day, range, tax)</figcaption></figure>
+        </div>
+    </section>
+
+    <section id="privacy" class="section">
+        <h2>Privacy Policy</h2>
+        <div class="toc">
+            <a href="#pp-what-we-collect">What we collect</a>
+            <a href="#pp-how-used">How we use data</a>
+            <a href="#pp-permissions">App permissions</a>
+            <a href="#pp-sharing">Sharing & selling</a>
+            <a href="#pp-storage">Storage & retention</a>
+            <a href="#pp-security">Security</a>
+            <a href="#pp-children">Children</a>
+            <a href="#pp-changes">Changes</a>
+            <a href="#pp-contact">Contact</a>
+        </div>
+
+        <div class="card legal">
+            <p class="muted"><em>Last updated: <span id="pp-date"></span></em></p>
+
+            <h3 id="pp-summary">Summary</h3>
+            <p>Vorbiz is designed for vendors to record sales. We minimize data collection and do not sell user data. Today, the app works <strong>offline‑first</strong> and stores your sales data <strong>locally on your device</strong>. We use the device camera solely to scan labels you choose to print and use. If we later add optional services like error logging or account sync, this policy will be updated and those features will be clearly labeled as optional.</p>
+
+            <h3 id="pp-what-we-collect">What we collect</h3>
+            <ul>
+                <li><strong>In‑app content you create</strong> (e.g., locations, items, sales, reports) — stored locally on your device.</li>
+                <li><strong>Camera input</strong> for scanning your item labels (e.g., UPC/QR). No images or video are saved by Vorbiz.</li>
+            </ul>
+            <p><strong>Planned future features (not active yet)</strong>:</p>
+            <ul>
+                <li><strong>Error logs</strong> to help diagnose crashes. If enabled, these may include device model, OS version, app version, and anonymized crash details — never your sales data.</li>
+                <li><strong>User accounts</strong> for optional sync/backup. If added, we may collect your email and basic profile to provide the service.</li>
+            </ul>
+
+            <h3 id="pp-how-used">How we use data</h3>
+            <ul>
+                <li>To operate the app and provide core functionality (recording sales, generating reports).</li>
+                <li>To improve stability and fix issues (if error logging is enabled in the future).</li>
+                <li>To provide optional account features (if accounts are added in the future).</li>
+            </ul>
+
+            <h3 id="pp-permissions">App permissions</h3>
+            <ul>
+                <li><strong>Camera</strong> — used to scan your labels for faster item entry. Required only when you choose to scan; otherwise unused.</li>
+            </ul>
+
+            <h3 id="pp-sharing">Sharing & selling</h3>
+            <ul>
+                <li>We <strong>do not sell</strong> personal data.</li>
+                <li>We do not share your sales content with third parties unless you explicitly export/share it.</li>
+                <li>If we later use third‑party services (e.g., crash reporting), we will list each service and its role here.</li>
+            </ul>
+
+            <h3 id="pp-storage">Storage & retention</h3>
+            <ul>
+                <li>Your sales data is stored <strong>locally on your device</strong> and remains until you delete the app data, use an export, or we introduce optional account sync.</li>
+                <li>If optional error logs are added later, they will be retained only as long as necessary to diagnose issues.</li>
+            </ul>
+
+            <h3 id="pp-security">Security</h3>
+            <p>Local data stays on your device. If we add account sync, data in transit will be encrypted (HTTPS) and we will publish additional details here.</p>
+
+            <h3 id="pp-children">Children's privacy</h3>
+            <p>Vorbiz is intended for business users and is <strong>not</strong> directed to children under 13. We do not knowingly collect personal information from children.</p>
+
+            <h3 id="pp-changes">Changes to this policy</h3>
+            <p>We may update this policy as the app evolves. We will update the "Last updated" date and, when changes are material, provide in‑app notice.</p>
+
+            <h3 id="pp-contact">Contact</h3>
+            <p>Questions about privacy? Email <a href="mailto:support@vorbiz.app">support@vorbiz.net</a>.</p>
+
+            <p class="muted">This page is provided for transparency and general information and is not legal advice.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <span id="y"></span> Vorbiz</div>
+        <div class="muted">Built for markets and vendor booths</div>
+    </div>
+</footer>
+
+<script>
+    // stamp dates
+    (function(){
+        const d = new Date();
+        const y = d.getFullYear();
+        const fmt = d.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+        const yEl = document.getElementById('y');
+        const pEl = document.getElementById('pp-date');
+        if(yEl) yEl.textContent = y;
+        if(pEl) pEl.textContent = fmt;
+    })();
+</script>
+</body>
+</html>
