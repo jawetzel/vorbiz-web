@@ -60,6 +60,13 @@
         .toc a{padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;color:var(--muted)}
         .toc a:hover{color:var(--text)}
         .callout{border-left:3px solid var(--ring);padding:10px 14px;border-radius:10px;background:rgba(96,165,250,.08)}
+        a[href^="mailto:"]{color:var(--cta)}
+        @media(max-width:600px){
+            .nav{flex-direction:column;align-items:flex-start;height:auto;justify-content:flex-start}
+            .nav nav{display:flex;flex-direction:column;align-items:flex-start;margin-top:8px}
+            .nav nav a{margin:6px 0 0 0}
+            .nav nav a.btn{padding:8px 12px;margin-top:12px}
+        }
     </style>
 </head>
 <body>
