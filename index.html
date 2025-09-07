@@ -26,7 +26,7 @@
     />
     <style>
       :root {
-        --bs-body-bg: #ffffff;
+        --bs-body-bg: #f1f5f9;
         --bs-body-color: #0f172a;
         /* Improved contrast for small text */
         --bs-secondary-color: #475569;
@@ -39,7 +39,7 @@
       }
       .navbar {
         background: var(--bs-primary);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       }
       .logo {
         width: 22px;
@@ -71,6 +71,11 @@
         border-bottom-width: 2px;
         border-radius: 6px;
         background: rgba(0, 0, 0, 0.05);
+      }
+      .card {
+        background: #ffffff;
+        border-color: rgba(203, 213, 225, 0.5);
+        border-radius: 1rem;
       }
       .card p,
       .card ul {
@@ -123,7 +128,7 @@
     <main class="container my-5">
       <section class="row align-items-center g-4">
         <div class="col-lg-7">
-          <div class="card bg-secondary border-0 p-4">
+          <div class="card p-4">
             <div class="text-uppercase small fw-bold text-info">
               Vendor‑only sales recording
             </div>
@@ -160,7 +165,7 @@
 
       <section id="features" class="my-5">
         <h2>What the app does</h2>
-        <div class="card bg-secondary border-0 p-4">
+        <div class="card p-4">
           <h3>Locations</h3>
           <p>
             Define where sales occur and which items are available there. Each
@@ -259,7 +264,7 @@
 
       <section id="privacy" class="my-5">
         <h2>Privacy Policy – Vorbiz</h2>
-        <div class="card bg-secondary border-0 p-4 legal">
+        <div class="card p-4 legal">
           <p><strong>Effective date:</strong> August 24, 2025</p>
           <p>
             Vorbiz (“Vorbiz,” “we,” “our,” or “us”) respects your privacy. This
