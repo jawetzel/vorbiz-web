@@ -1,201 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vorbiz – Vendor Sales Recorder</title>
-  <link rel="icon" href="enhanced_icon_512.png" sizes="any" />
-  <meta name="description" content="Vorbiz is a vendor-focused sales recording app for markets and pop‑ups. Track inventory, ring sales in seconds, and generate clean reports." />
-  <meta name="theme-color" content="#043F3B" />
-
-  <!-- Bootstrap 5 -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmBp+7uHksL/73O8i08V7o0BHPZqs3i6"
-    crossorigin="anonymous"
-  />
-
-  <style>
-    :root {
-      --bs-body-bg: #043F3B;
-      --bs-body-color: #F7F9F9;
-      --bs-primary: #00937A;      /* brand teal */
-      --bs-secondary: #065F59;    /* card teal */
-      --bs-danger: #DB4814;       /* action orange */
-      --bs-info: #44B299;         /* focus ring */
-      --bs-link-color: var(--bs-primary);
-    }
-    a { text-decoration: none; }
-    section { padding: 4rem 0; }
-    .card { background-color: var(--bs-secondary); border: none; }
-    .card p, .card li, footer { color: #A5B9B3; }
-    footer { padding: 2rem 0; }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vorbiz – Simple Sales Recording for Vendors</title>
+    <link rel="icon" href="enhanced_icon_512.png" sizes="any" />
+    <meta name="description" content="Vorbiz is a vendor‑facing sales recording app. Log sales fast, generate day and tax reports, and keep items organized with UPCs, variants, and quick buttons." />
+    <meta property="og:title" content="Vorbiz – Simple Sales Recording for Vendors" />
+    <meta property="og:description" content="Vendor‑only sales recording. Offline‑first. Fast item entry. Clean reports." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="feature-graphic.png" />
+    <meta name="theme-color" content="#0f172a" />
+    <style>
+        :root {
+            --bg:#043F3B; /* deep teal */
+            --card:#065F59; /* card teal */
+            --muted:#A5B9B3;
+            --text:#F7F9F9;
+            --accent:#00937A; /* brand teal */
+            --cta:#DB4814; /* action orange */
+            --ring:#44B299; /* focus ring */
+        }
+        *{box-sizing:border-box}
+        html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{opacity:.9}
+        header{position:sticky;top:0;background:rgba(11,16,32,.6);backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid rgba(148,163,184,.2);z-index:10}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+        .brand{display:flex;gap:.6rem;align-items:center;font-weight:700}
+        .brand .dot{display:none} /* replaced with logo */
+        .brand .logo{width:22px;height:22px;border-radius:6px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+        .nav a{margin-left:18px;color:var(--text)}
+        .nav a.muted{color:var(--muted)}
+        .btn{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(219,72,20,.9),rgba(219,72,20,.82));color:var(--text);font-weight:600}
+        .btn:hover{box-shadow:0 0 0 3px rgba(96,165,250,.25)}
+        .hero{padding:72px 0}
+        .grid{display:grid;gap:22px}
+        @media(min-width:900px){.grid{grid-template-columns:1.2fr .8fr;align-items:center}}
+        .card{background:var(--card);border:1px solid rgba(148,163,184,.15);border-radius:18px;padding:22px}
+        h1{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 10px}
+        h2{font-size:clamp(22px,3vw,28px);margin:26px 0 10px}
+        h3{font-size:20px;margin:16px 0 8px}
+        p{color:var(--muted);margin:10px 0}
+        ul{padding-left:18px;color:var(--muted)}
+        .feature{display:grid;grid-template-columns:28px 1fr;gap:10px;margin:12px 0}
+        .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;background:rgba(148,163,184,.08);color:var(--text);font-size:14px}
+        .snapshots { display:grid; gap:16px; align-items:start; }
+        @media(min-width:700px){.snapshots{grid-template-columns:1fr 1fr}}
+        .shot{border-radius:16px;border:1px solid rgba(148,163,184,.2);overflow:hidden;background:transparent}
+        .shot img{display:block;width:100%;height:auto}
+        .kicker{letter-spacing:.12em;text-transform:uppercase;color:#a5b4fc;font-weight:700;font-size:12px}
+        footer{padding:40px 0;color:var(--muted)}
+        .muted{color:var(--muted)}
+        .section{padding:38px 0}
+        .legal{font-size:14px}
+        .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:13px;padding:.2rem .45rem;border:1px solid rgba(148,163,184,.3);border-bottom-width:2px;border-radius:6px;background:rgba(2,6,23,.6)}
+        .toc{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+        .toc a{padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;color:var(--muted)}
+        .toc a:hover{color:var(--text)}
+        .callout{border-left:3px solid var(--ring);padding:10px 14px;border-radius:10px;background:rgba(96,165,250,.08)}
+        a[href^="mailto:"]{color:var(--cta)}
+        @media(max-width:600px){
+            .nav{flex-direction:column;align-items:flex-start;height:auto;justify-content:flex-start}
+            .nav nav{display:flex;flex-direction:column;align-items:flex-start;margin-top:8px}
+            .nav nav a{margin:6px 0 0 0}
+            .nav nav a.btn{padding:8px 12px;margin-top:12px}
+        }
+    </style>
 </head>
-
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-dark navbar-expand-md bg-secondary sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="./assets/enhanced_icon_512.png" alt="" width="24" height="24" class="me-2 rounded-2" />
-        Vorbiz
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#plans">Plans</a></li>
-          <li class="nav-item"><a class="nav-link" href="#screenshots">Screenshots</a></li>
-          <li class="nav-item"><a class="nav-link" href="#privacy">Privacy</a></li>
-          <li class="nav-item"><a class="btn btn-danger ms-md-3" href="#download">Get the app</a></li>
+<header>
+    <div class="container nav">
+        <div class="brand"><img src="./assets/enhanced_icon_512.png" alt="" class="logo" /> Vorbiz</div>
+            <nav>
+                <a href="#features" class="muted">Features</a>
+                <a href="#screenshots" class="muted">Screenshots</a>
+                <a href="#privacy" class="muted">Privacy</a>
+                <a href="#download" class="btn">Get the app</a>
+            </nav>
+        </div>
+</header>
+
+<main class="container">
+    <section class="hero grid">
+        <div class="card">
+            <div class="kicker">Vendor‑only sales recording</div>
+            <h1>Record sales fast. Keep items tidy. File taxes without headaches.</h1>
+            <p>Vorbiz is a <strong>vendor‑facing</strong> app (not a customer POS) built for markets and pop‑ups. Create locations, add items with UPCs and variants, pin quick buttons, and scan labels to ring items in seconds. Reports summarize your day, date ranges, and sales tax by location.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+                <span class="chip">Offline‑first</span>
+                <span class="chip">Fast item entry</span>
+                <span class="chip">Clean reports</span>
+            </div>
+            <p id="download" class="callout" style="margin-top:16px">Coming to Google Play.</p>
+        </div>
+        <div>
+            <div class="shot"><img src="./assets/feature-graphic.png" alt="Vorbiz feature graphic" /></div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <h2>What the app does</h2>
+        <div class="card">
+            <h3>Locations</h3>
+            <p>Define where sales occur and which items are available there. Each location includes a <strong>name</strong>, <strong>address</strong>, and <strong>tax settings</strong>. Enable <strong>tax‑inclusive pricing</strong> if your listed price already includes tax; disable it to add tax on top.</p>
+
+            <h3>Items</h3>
+            <p>Create items with a <strong>name</strong>, <strong>price</strong>, and a <strong>UPC</strong> (12‑digit number). Vorbiz can generate a <strong>QR label</strong> from the UPC so it always scans back to the correct product. Toggle <strong>Quick Button</strong> for top sellers.</p>
+            <p>Add <strong>variants</strong> (e.g., 8oz / 12oz / 16oz) to keep your item list short. When an item has variants, the sale screen prompts you to pick the right option before adding it to the cart.</p>
+
+            <h3>Sale screen</h3>
+            <ul>
+                <li>Select the active location; any Quick Buttons appear for one‑tap adding.</li>
+                <li>If an item has variants, you'll choose the option first.</li>
+                <li>Built‑in label scanning adds items instantly.</li>
+            </ul>
+
+            <h3>Managing sales</h3>
+            <p>From the <strong>Sales List</strong>, you can update a sale's <strong>date</strong> or <strong>location</strong>. If line items or totals need changes, delete and recreate the sale with the correct details.</p>
+
+            <h3>Reporting</h3>
+            <ul>
+                <li><strong>Day Report</strong> – all sales for a single day.</li>
+                <li><strong>Date Range Report</strong> – summarized sales for any period.</li>
+                <li><strong>Sales Tax Report</strong> – tax collected by location for easy filing.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="screenshots" class="section">
+        <h2>Screenshots</h2>
+        <div class="snapshots">
+            <figure class="shot"><img src="./assets/screenshot1.jpg" alt="Vorbiz sale screen" /><figcaption class="muted" style="padding:10px">Sale screen with Quick Buttons and scanner</figcaption></figure>
+            <figure class="shot"><img src="./assets/screenshot2.jpg" alt="Vorbiz reporting screen" /><figcaption class="muted" style="padding:10px">Reporting overview (day, range, tax)</figcaption></figure>
+        </div>
+    </section>
+
+    
+<section id="privacy" class="section">
+    <h2>Privacy Policy – Vorbiz</h2>
+    <div class="card legal">
+        <p><strong>Effective date:</strong> August 24, 2025</p>
+        <p>Vorbiz (“Vorbiz,” “we,” “our,” or “us”) respects your privacy. This Privacy Policy explains what we collect, how we use it, how we share it, and the rights you may have under applicable laws (including the EU/UK GDPR and the California Consumer Privacy Act as amended by the CPRA).</p>
+        <p>If you are a business user of the Vorbiz app, you may input information about your locations and sales. You control what you enter. For any personal data you input about other individuals, you are the <strong>data controller</strong> and Vorbiz acts as your <strong>processor/service provider</strong>. For your own account/profile data and our website/app telemetry, Vorbiz is the <strong>data controller</strong>.</p>
+        <hr />
+        <h3>1) Information We Collect</h3>
+        <p>We may collect the following categories of information:</p>
+        <p><strong>A. Account &amp; Subscription Info (you provide)</strong></p>
+        <ul>
+            <li>Name, email address, phone number, mailing address</li>
+            <li>Authentication details (e.g., hashed credentials)</li>
+            <li>Subscription status and plan information</li>
         </ul>
-      </div>
+        <p><strong>B. Sales &amp; Business Data (you provide in-app)</strong></p>
+        <ul>
+            <li>Item names, prices, quantities, taxes, discounts</li>
+            <li>Sales timestamps and your defined <strong>location</strong> of sale</li>
+            <li>Configuration you set for locations (e.g., tax settings)</li>
+        </ul>
+        <blockquote class="callout">
+            <p>We do <strong>not</strong> require or intend to collect your end-customers’ personal data. If you choose to enter it, you are responsible for ensuring you have a lawful basis to do so.</p>
+        </blockquote>
+        <p><strong>C. Device &amp; Usage Data (collected automatically)</strong></p>
+        <ul>
+            <li>Device type, operating system, app version</li>
+            <li>In-app actions and general usage telemetry</li>
+            <li>IP address and coarse location (derived from IP) for security and fraud prevention</li>
+        </ul>
+        <p><strong>D. Error &amp; Diagnostic Data (crash/analytics)</strong></p>
+        <ul>
+            <li>Crash logs, error messages, stack traces</li>
+            <li>Performance metrics</li>
+            <li>Limited identifiers (e.g., IP address, device ID, app instance ID)</li>
+        </ul>
+        <blockquote class="callout">
+            <p>Collected only to diagnose issues, improve stability, and secure the service.</p>
+        </blockquote>
+        <p><strong>E. Camera Access (in app)</strong></p>
+        <p>The app accesses the device camera <strong>solely to scan QR codes and barcodes</strong> while you are actively using the feature. <strong>No images or video are recorded or stored</strong> by Vorbiz from the camera stream.</p>
+        <p><strong>F. Support &amp; Communications</strong></p>
+        <ul>
+            <li>Content of your messages to us (e.g., support tickets, feedback, email)</li>
+        </ul>
+        <p><strong>G. Cookies &amp; Similar Technologies (website)</strong></p>
+        <p>We may use cookies or similar technologies on vorbiz.net for essential functionality, performance, and security.</p>
+        <hr />
+        <h3>2) How We Use Information</h3>
+        <p>We use information to:</p>
+        <ul>
+            <li>Provide, operate, maintain, and improve the app and website</li>
+            <li>Set up and manage accounts, authentication, and subscriptions</li>
+            <li>Generate reports and features you request (e.g., sales summaries)</li>
+            <li>Monitor performance, debug issues, and ensure security</li>
+            <li>Communicate with you (support, updates, policy or service notices)</li>
+            <li>Comply with legal obligations and enforce our terms</li>
+        </ul>
+        <p>We <strong>do not sell or rent</strong> personal information. We also <strong>do not “share”</strong> personal information for cross-context behavioral advertising as defined by the CPRA.</p>
+        <hr />
+        <h3>3) Our Roles and Legal Bases (GDPR/UK GDPR)</h3>
+        <ul>
+            <li><strong>Controller:</strong> for your account/profile/telemetry, website usage, and our own business records. Legal bases include <strong>contract</strong> (providing the service), <strong>legitimate interests</strong> (security, debugging, improving the app), <strong>consent</strong> (where required), and <strong>legal obligation</strong>.</li>
+            <li><strong>Processor/Service Provider:</strong> for Sales &amp; Business Data you input about others. We process it <strong>only on your documented instructions</strong> (i.e., via your in-app actions and settings).</li>
+        </ul>
+        <p>If you need a <strong>Data Processing Addendum (DPA)</strong>, contact <a href="mailto:support@vorbiz.net">support@vorbiz.net</a>.</p>
+        <hr />
+        <h3>4) How We Share Information</h3>
+        <p>We share information only with:</p>
+        <ul>
+            <li><strong>Service providers / processors</strong> that help us operate (e.g., cloud hosting, databases, payment processors, crash/analytics tools, email providers). They may access personal information <strong>only</strong> to perform services for us and are bound by confidentiality and data protection obligations.</li>
+            <li><strong>Legal and safety</strong> recipients when required by law, legal process, or to protect rights, safety, or security.</li>
+            <li><strong>Business transfers</strong> (e.g., merger, acquisition). Your information may be transferred as part of the transaction and remain protected by this Policy or a successor policy at least as protective.</li>
+        </ul>
+        <p>We <strong>do not sell</strong> personal information and <strong>do not share</strong> it for cross-context behavioral advertising.</p>
+        <hr />
+        <h3>5) Data Storage, Security, and Retention</h3>
+        <ul>
+            <li><strong>Storage:</strong> Personal and sales data are stored securely in off-device databases. Data in transit is encrypted (TLS). We use industry-standard security controls and restrict access to authorized personnel and systems.</li>
+            <li><strong>Retention:</strong>
+                <ul>
+                    <li>Account &amp; Subscription data: kept while your account is active and for up to <strong>3 years</strong> after closure (for records, dispute resolution, tax/legal).</li>
+                    <li>Sales &amp; Business Data (processor role): retained according to your use of the service; if you request deletion or delete data in-app, we remove it from active systems, with typical backup overwrites within <strong>90 days</strong>.</li>
+                    <li>Diagnostics &amp; logs: typically <strong>12–24 months</strong>, unless a longer period is required for security/forensics. These periods may vary where law or legitimate interests require longer/shorter retention.</li>
+                </ul>
+            </li>
+            <li><strong>Your Controls:</strong> Where available, you can delete records in-app. You can also request deletion via email (see Section 10).</li>
+        </ul>
+        <hr />
+        <h3>6) International Transfers</h3>
+        <p>We may process and store data in the United States and other countries. Where required, we use appropriate safeguards such as <strong>Standard Contractual Clauses (SCCs)</strong> for EEA/UK transfers.</p>
+        <hr />
+        <h3>7) Your Privacy Rights</h3>
+        <p>Your rights depend on your location and applicable law. They may include:</p>
+        <ul>
+            <li><strong>Access</strong>: obtain a copy of your personal data</li>
+            <li><strong>Correction</strong>: rectify inaccurate or incomplete data</li>
+            <li><strong>Deletion</strong>: request erasure of personal data</li>
+            <li><strong>Restriction/Objection</strong>: limit or object to certain processing</li>
+            <li><strong>Portability</strong>: receive your data in a portable format</li>
+            <li><strong>Withdraw consent</strong> where we rely on consent (without affecting prior lawful processing)</li>
+        </ul>
+        <p><strong>How to exercise:</strong> email <a href="mailto:support@vorbiz.net">support@vorbiz.net</a> with your request, your relationship to Vorbiz, and the data scope. We may need to verify your identity.</p>
+        <p><strong>California (CCPA/CPRA) notices:</strong></p>
+        <ul>
+            <li>We <strong>do not sell</strong> personal information and <strong>do not share</strong> personal information for cross-context behavioral advertising.</li>
+            <li>You have the rights to <strong>know</strong>, <strong>delete</strong>, <strong>correct</strong>, and <strong>non-discrimination</strong>. You may use an <strong>authorized agent</strong>; we will require proof of authorization.</li>
+            <li>We do not use <strong>Sensitive Personal Information</strong> for inferring characteristics or for purposes beyond those permitted by CPRA.</li>
+        </ul>
+        <hr />
+        <h3>8) Children’s Privacy</h3>
+        <p>Vorbiz is not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided personal information, contact <a href="mailto:support@vorbiz.net">support@vorbiz.net</a> and we will take appropriate steps to delete it.</p>
+        <hr />
+        <h3>9) Cookies &amp; “Do Not Track”</h3>
+        <p>We may use cookies on the website for essential and performance purposes. Your browser may offer a “Do Not Track” setting; because there is no industry standard, we do not respond to DNT signals. You can manage cookies through your browser settings.</p>
+        <hr />
+        <h3>10) Data Requests &amp; Deletion</h3>
+        <p>To access, correct, export, or delete your data—or to terminate your account—email <a href="mailto:support@vorbiz.net">support@vorbiz.net</a> with the subject line <strong>“Privacy Request”</strong> and describe your request. We will respond as required by law. For deletion, we remove data from active systems and schedule removal from backups during normal rotation (typically within <strong>90 days</strong>).</p>
+        <hr />
+        <h3>11) Third-Party Services</h3>
+        <p>Our service may include integrations with third-party providers (e.g., hosting, payments, crash reporting/analytics, email delivery). Their processing of your data is limited to providing their services to us, under contracts that restrict use for any other purpose.</p>
+        <hr />
+        <h3>12) Changes to This Policy</h3>
+        <p>We may update this Policy from time to time. If we make material changes, we will update the “Effective date” above and, where appropriate, provide additional notice (e.g., in-app or email).</p>
+        <hr />
+        <h3>13) Contact Us</h3>
+        <p>Questions or requests about this Policy or your data:<br /><strong>Email:</strong> <a href="mailto:support@vorbiz.net">support@vorbiz.net</a></p>
+        <hr />
+        <h3>CPRA Category Mapping (Summary)</h3>
+        <ul>
+            <li><strong>Identifiers:</strong> name, email, phone, address, IP address, device IDs (no sale/share)</li>
+            <li><strong>Customer Records:</strong> subscription/account details (no sale/share)</li>
+            <li><strong>Commercial Information:</strong> subscription plan, in-app purchases (if any) (no sale/share)</li>
+            <li><strong>Internet/Network Activity:</strong> app/website usage, logs, diagnostics (no sale/share)</li>
+            <li><strong>Geolocation (coarse):</strong> derived from IP for security/fraud (no sale/share)</li>
+            <li><strong>Sensitive Personal Information:</strong> not sought; if provided by you, we do not use it to infer characteristics</li>
+        </ul>
     </div>
-  </nav>
+</section>
 
-  <!-- HERO -->
-  <header class="container py-5">
-    <div class="row align-items-center g-4">
-      <div class="col-md-6">
-        <div class="card p-4">
-          <p class="text-uppercase fw-bold small text-info mb-1">Vendor‑only sales recording</p>
-          <h1 class="h2">Record sales fast. Keep items tidy. File taxes without headaches.</h1>
-          <p>
-            Vorbiz is a <strong>vendor‑focused</strong> mobile app for markets and pop‑ups. Create locations, add items with UPCs and variants, and ring sales in seconds—offline or on. Every account
-            <strong>automatically backs up your data to the cloud</strong>.
-          </p>
-          <div class="d-flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-primary">Offline‑first</span>
-            <span class="badge bg-primary">Fast item entry</span>
-            <span class="badge bg-primary">Clean reports</span>
-            <span class="badge bg-primary">Cloud backups</span>
-          </div>
-          <p id="download" class="alert alert-info py-2 mb-0">Coming to Google Play.</p>
-        </div>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="./assets/feature-graphic.png" alt="Vorbiz feature graphic" class="img-fluid rounded-4 border border-info" />
-      </div>
+</main>
+
+<footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <span id="y"></span> Vorbiz</div>
+        <div class="muted">Built for markets and vendor booths</div>
     </div>
-  </header>
+</footer>
 
-  <main>
-    <!-- FEATURES -->
-    <section id="features">
-      <div class="container">
-        <h2 class="mb-4 text-center">What the app does</h2>
-        <div class="card p-4">
-          <h3>Locations</h3>
-          <p>Track where sales happen and which items are available. Each location stores its <strong>address</strong>, <strong>tax settings</strong>, and whether prices include tax.</p>
-
-          <h3>Items</h3>
-          <p>Items have a <strong>name</strong>, <strong>price</strong>, and optional <strong>UPC</strong>. Vorbiz can generate QR labels and Quick Buttons for top sellers. Add <strong>variants</strong> like size or color to keep lists short.</p>
-
-          <h3>Sale screen</h3>
-          <ul>
-            <li>Select the active location; Quick Buttons appear for one‑tap adding.</li>
-            <li>Variant items prompt for the right option.</li>
-            <li>Label scanning instantly adds items to the cart.</li>
-          </ul>
-
-          <h3>Reports</h3>
-          <ul>
-            <li><strong>Day</strong> – detailed list of a single day’s sales (free).</li>
-            <li><strong>Date range</strong> – summaries for any span (basic).</li>
-            <li><strong>Sales tax</strong> – last month for free users; any month with basic.</li>
-            <li>PDF export of reports (basic).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLANS -->
-    <section id="plans" class="bg-secondary">
-      <div class="container">
-        <h2 class="mb-4 text-center">Plans</h2>
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card h-100 p-4">
-              <h3 class="text-center">Free</h3>
-              <ul>
-                <li>Automatic cloud backups</li>
-                <li>Day report &amp; last month’s sales tax report</li>
-                <li>Ring sales offline or online</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100 p-4">
-              <h3 class="text-center">Basic</h3>
-              <ul>
-                <li>Everything in Free</li>
-                <li>Multi‑device sync</li>
-                <li>Date range &amp; any‑month sales tax reports</li>
-                <li>Additional reporting options with PDF export</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCREENSHOTS -->
-    <section id="screenshots">
-      <div class="container">
-        <h2 class="mb-4 text-center">Screenshots</h2>
-        <div class="row g-3">
-          <div class="col-md-6">
-            <figure class="card h-100">
-              <img src="./assets/screenshot1.jpg" class="card-img-top" alt="Vorbiz sale screen" />
-              <figcaption class="card-body small text-center">Sale screen with Quick Buttons and scanner</figcaption>
-            </figure>
-          </div>
-          <div class="col-md-6">
-            <figure class="card h-100">
-              <img src="./assets/screenshot2.jpg" class="card-img-top" alt="Vorbiz reporting screen" />
-              <figcaption class="card-body small text-center">Reporting overview (day, range, tax)</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRIVACY SUMMARY -->
-    <section id="privacy" class="bg-secondary">
-      <div class="container">
-        <h2 class="mb-4 text-center">Privacy</h2>
-        <div class="card p-4">
-          <p><strong>Effective date:</strong> August 24, 2025</p>
-          <p>
-            Vorbiz stores the sales data you enter and backs it up to the cloud. We collect basic diagnostic and usage data to keep things running smoothly. To improve app reliability, we also use
-            Sentry to capture error information, which may include device details and application state when a crash occurs. This information is used solely to diagnose and fix issues.
-          </p>
-          <p>We do not sell or share your personal information with third parties. You may request data deletion or ask questions by emailing <a href="mailto:support@vorbiz.net">support@vorbiz.net</a>.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="container d-flex flex-wrap justify-content-between align-items-center">
-    <div>© <span id="y"></span> Vorbiz</div>
-    <div class="small">Built for markets and vendor booths</div>
-  </footer>
-
-  <!-- Bootstrap JS bundle -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"
-  ></script>
-
-  <!-- Stamp current year -->
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<script>
+    // stamp year
+    (function(){
+        const d = new Date();
+        const y = d.getFullYear();
+        const yEl = document.getElementById('y');
+        if(yEl) yEl.textContent = y;
+    })();
+</script>
 </body>
 </html>
