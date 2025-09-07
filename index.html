@@ -26,25 +26,25 @@
     />
     <style>
       :root {
-        --bs-body-bg: #f8f9fa;
-        --bs-body-color: #212529;
-        --bs-secondary-color: #6c757d;
+        --bs-body-bg: #0f172a;
+        --bs-body-color: #f8fafc;
+        --bs-secondary-color: #94a3b8;
         --bs-primary: #00937a;
-        --bs-secondary: #e9ecef;
+        --bs-secondary: #1e293b;
         --bs-info: #44b299;
         --bs-warning: #db4814;
-        --bs-link-color: #00937a;
-        --bs-link-hover-color: #007863;
+        --bs-link-color: #44b299;
+        --bs-link-hover-color: #37a086;
       }
       .navbar {
-        background: #ffffff;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background: #0f172a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .logo {
         width: 22px;
         height: 22px;
         border-radius: 6px;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
       }
       .chip {
         display: inline-flex;
@@ -52,7 +52,7 @@
         gap: 0.5rem;
         padding: 0.375rem 0.75rem;
         border-radius: 50rem;
-        background: rgba(148, 163, 184, 0.08);
+        background: rgba(148, 163, 184, 0.1);
       }
       .shot img {
         border-radius: 1rem;
@@ -65,10 +65,10 @@
           "Liberation Mono", "Courier New", monospace;
         font-size: 0.8125rem;
         padding: 0.2rem 0.45rem;
-        border: 1px solid rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom-width: 2px;
         border-radius: 6px;
-        background: rgba(0, 0, 0, 0.05);
+        background: rgba(255, 255, 255, 0.05);
       }
       .card p,
       .card ul {
@@ -80,9 +80,7 @@
     </style>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light sticky-top border-bottom"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
       <div class="container">
         <a
           class="navbar-brand d-flex align-items-center gap-2 fw-bold"
@@ -142,7 +140,10 @@
               <span class="chip">Fast item entry</span>
               <span class="chip">Clean reports</span>
             </div>
-            <p id="download" class="alert alert-info mt-3 mb-0 text-dark">
+            <p
+              id="download"
+              class="alert bg-info text-light border-0 mt-3 mb-0"
+            >
               Coming to Google Play.
             </p>
           </div>
@@ -299,7 +300,7 @@
             </li>
             <li>Configuration you set for locations (e.g., tax settings)</li>
           </ul>
-          <div class="alert alert-info text-dark">
+          <div class="alert bg-info text-light border-0">
             <p>
               We do <strong>not</strong> require or intend to collect your
               end-customers’ personal data. If you choose to enter it, you are
@@ -329,7 +330,7 @@
               Limited identifiers (e.g., IP address, device ID, app instance ID)
             </li>
           </ul>
-          <div class="alert alert-info text-dark">
+          <div class="alert bg-info text-light border-0">
             <p>
               Collected only to diagnose issues, improve stability, and secure
               the service.
