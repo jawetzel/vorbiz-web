@@ -864,39 +864,13 @@
           const raw = qp.get("redirect");
           if (!raw) return;
 
-          // Build a "clean" URL (remove redirect param) so a refresh won't reattempt.
+          // Clean the URL to avoid loops
           qp.delete("redirect");
-          const clean = location.origin + location.pathname +
-                  (qp.toString() ? "?" + qp.toString() : "") +
-                  location.hash;
-          history.replaceState(null, "", clean);
+          history.replaceState(null, "", location.pathname + (qp.toString() ? "?" + qp : "") + location.hash);
 
-          // Decode & normalize (handles vorbiz:/// -> vorbiz://)
+          // Try the app; do not replace() and no fallback
           let target = decodeURIComponent(raw).replace(/^([a-z+.-]+:\/\/)\/+/, "$1");
-
-          // Prefer a method that doesn't unload the page
-          const ua = navigator.userAgent || "";
-          const isAndroid = /Android/i.test(ua);
-          const isIOS = /iPhone|iPad|iPod/i.test(ua);
-
-          // If the app opens, the tab will typically go hidden; if it doesn't, we just stay here.
-          let wentBackground = false;
-          document.addEventListener("visibilitychange", () => {
-            if (document.hidden) wentBackground = true;
-          });
-
-          // iOS usually tolerates top-level navigation; Android works well with hidden iframe.
-          if (isAndroid) {
-            const iframe = document.createElement("iframe");
-            iframe.style.display = "none";
-            iframe.src = target;           // attempt deep link
-            document.body.appendChild(iframe);
-            setTimeout(() => document.body.removeChild(iframe), 2000);
-          } else {
-            // iOS (and desktop browsers): try without replace(), so failure leaves you here.
-            window.location.href = target;
-            // No fallback navigation; if it fails, you’re still on this page.
-          }
+          window.location.href = target;
         } catch (err) {
           console.warn("Invalid redirect parameter", err);
         }
