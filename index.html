@@ -860,18 +860,42 @@
     <script>
       (function () {
         try {
-          const params = new URLSearchParams(window.location.search);
-          const redirectParam = params.get("redirect");
-          if (redirectParam) {
-            const redirectUrl = new URL(redirectParam, window.location.origin);
-            if (redirectUrl.origin === window.location.origin) {
-              const target =
-                redirectUrl.pathname +
-                redirectUrl.search +
-                redirectUrl.hash;
-              window.location.replace(target);
-              return;
-            }
+          const qp = new URLSearchParams(location.search);
+          const raw = qp.get("redirect");
+          if (!raw) return;
+
+          // Build a "clean" URL (remove redirect param) so a refresh won't reattempt.
+          qp.delete("redirect");
+          const clean = location.origin + location.pathname +
+                  (qp.toString() ? "?" + qp.toString() : "") +
+                  location.hash;
+          history.replaceState(null, "", clean);
+
+          // Decode & normalize (handles vorbiz:/// -> vorbiz://)
+          let target = decodeURIComponent(raw).replace(/^([a-z+.-]+:\/\/)\/+/, "$1");
+
+          // Prefer a method that doesn't unload the page
+          const ua = navigator.userAgent || "";
+          const isAndroid = /Android/i.test(ua);
+          const isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+          // If the app opens, the tab will typically go hidden; if it doesn't, we just stay here.
+          let wentBackground = false;
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) wentBackground = true;
+          });
+
+          // iOS usually tolerates top-level navigation; Android works well with hidden iframe.
+          if (isAndroid) {
+            const iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = target;           // attempt deep link
+            document.body.appendChild(iframe);
+            setTimeout(() => document.body.removeChild(iframe), 2000);
+          } else {
+            // iOS (and desktop browsers): try without replace(), so failure leaves you here.
+            window.location.href = target;
+            // No fallback navigation; if it fails, you’re still on this page.
           }
         } catch (err) {
           console.warn("Invalid redirect parameter", err);
