@@ -857,29 +857,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      (function () {
-        try {
-          const qp = new URLSearchParams(location.search);
-          const raw = qp.get("redirect");
-          if (!raw) return;
-
-          // Clean the URL to avoid loops
-          qp.delete("redirect");
-          history.replaceState(null, "", location.pathname + (qp.toString() ? "?" + qp : "") + location.hash);
-
-          // Try the app; do not replace() and no fallback
-          let target = decodeURIComponent(raw).replace(/^([a-z+.-]+:\/\/)\/+/, "$1");
-          window.location.href = target;
-        } catch (err) {
-          console.warn("Invalid redirect parameter", err);
-        }
-
-        const d = new Date();
-        const y = d.getFullYear();
-        const yEl = document.getElementById("y");
-        if (yEl) yEl.textContent = y;
-      })();
-    </script>
+  
   </body>
 </html>
