@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vorbiz – Simple Sales Recording for Vendors</title>
+    <title>Vorbiz – Your Sales Logbook, Upgraded</title>
     <link rel="icon" href="enhanced_icon_512.png" sizes="any" />
     <meta
       name="description"
-      content="Vorbiz is a vendor‑facing sales recording app. Log sales fast, generate day and tax reports, and keep items organized with UPCs, variants, and quick buttons."
+      content="Vorbiz is the digital logbook for market vendors. Keep the notebook rhythm, skip the math, and end every day already totaled."
     />
     <meta
       property="og:title"
-      content="Vorbiz – Simple Sales Recording for Vendors"
+      content="Vorbiz – Your Sales Logbook, Upgraded"
     />
     <meta
       property="og:description"
-      content="Vendor‑only sales recording. Offline‑first. Fast item entry. Clean reports."
+      content="From notebook to app. Track sales, total them instantly, and file taxes without the spreadsheets."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="feature-graphic.png" />
@@ -80,6 +80,19 @@
         background: rgba(0, 97, 86, 0.12);
         color: var(--bs-primary);
         font-weight: 600;
+      }
+      .app-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+      .app-badges img {
+        height: 44px;
+        width: auto;
+      }
+      .section-anchor {
+        scroll-margin-top: 5.5rem;
       }
       .shot img {
         border-radius: 1rem;
@@ -154,7 +167,13 @@
         <div class="collapse navbar-collapse" id="navbars">
           <ul class="navbar-nav ms-auto align-items-lg-center">
             <li class="nav-item">
-              <a class="nav-link" href="#features">Features</a>
+              <a class="nav-link" href="#why">Why Vorbiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">How it works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#story">Story</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#screenshots">Screenshots</a>
@@ -176,30 +195,55 @@
     </nav>
 
     <main class="container my-5">
-      <section class="row align-items-center g-4">
+      <section id="download" class="row align-items-center g-4 section-anchor">
         <div class="col-lg-7">
           <div class="card p-4">
             <div class="text-uppercase small fw-bold text-info">
-              Vendor‑only sales recording
+              Made for market-life bookkeeping
             </div>
             <h1 class="display-5">
-              Record sales fast. Keep items tidy. File taxes without headaches.
+              Turn the logbook you trust into totals you can bank on.
             </h1>
             <p>
-              Vorbiz is a <strong>vendor‑facing</strong> app (not a customer
-              POS) built for markets and pop‑ups. Create locations, add items
-              with UPCs and variants, pin quick buttons, and scan labels to ring
-              items in seconds. Reports summarize your day, date ranges, and
-              sales tax by location.
+              Vorbiz was <strong>created by a fellow booth owner</strong> who wanted
+              the comfort of pen and paper with the speed of an app. Every tap
+              records a sale, balances the math, and keeps your running totals
+              ready for when the tent comes down.
             </p>
             <div class="d-flex flex-wrap gap-2 mt-3">
-              <span class="chip">Offline‑first</span>
-              <span class="chip">Fast item entry</span>
-              <span class="chip">Clean reports</span>
+              <span class="chip">Notebook flow, instant math</span>
+              <span class="chip">Clarity while you sell</span>
+              <span class="chip">Works even without Wi-Fi</span>
             </div>
-            <p id="download" class="alert bg-info text-light border-0 mt-3 mb-0">
-              Coming to Google Play.
+            <p class="mt-3 mb-0">
+              Open the app, tap through the rush, and close the night already
+              reconciled.
             </p>
+            <div
+              class="app-badges mt-4"
+              aria-label="Download Vorbiz on the App Store or Google Play"
+            >
+              <a
+                href="https://apps.apple.com/app/id6753637365"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="Download on the App Store"
+                />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.vorbiz.app"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                />
+              </a>
+            </div>
           </div>
         </div>
         <div class="col-lg-5">
@@ -213,87 +257,179 @@
         </div>
       </section>
 
-      <section id="features" class="my-5">
-        <h2>What the app does</h2>
+      <div id="why" class="section-anchor">
+        <section class="my-5">
+          <h2>Why vendors choose Vorbiz</h2>
+        <div class="row g-4">
+          <div class="col-lg">
+            <div class="card h-100 p-4">
+              <h3 class="h5 text-info text-uppercase">Keep what already works</h3>
+              <p>
+                Your spiral notebook, tally sheet, or stack of receipts gets the
+                story down. Vorbiz keeps that rhythm, translating every mark
+                into clean totals without forcing a new way of working.
+              </p>
+              <ul class="mb-0">
+                <li>Tap buttons that mirror the products you already track.</li>
+                <li>Watch revenue and tax sort themselves in the background.</li>
+                <li>Wrap the day with a report that matches your gut check.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg">
+            <div class="card h-100 p-4">
+              <h3 class="h5 text-info text-uppercase">Built for booth life</h3>
+              <p>
+                Vorbiz was sketched after long Saturdays under a canopy. It’s
+                plainspoken, hardware-free, and ready the moment you open the
+                app — even when the fairground Wi-Fi is acting up.
+              </p>
+              <ul class="mb-0">
+                <li>No POS jargon, contracts, or extra gear to plug in.</li>
+                <li>Offline-first sync keeps you selling when signal drops.</li>
+                <li>A generous free tier so the essentials stay unlocked.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+
+      <div id="features" class="section-anchor">
+        <section class="my-5">
+          <h2>How Vorbiz works in the field</h2>
         <div class="card p-4">
-          <h3>Locations</h3>
-          <p>
-            Define where sales occur and which items are available there. Each
-            location includes a <strong>name</strong>, <strong>address</strong>,
-            and <strong>tax settings</strong>. Enable
-            <strong>tax‑inclusive pricing</strong> if your listed price already
-            includes tax; disable it to add tax on top.
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <h3>Capture every sale in seconds</h3>
+              <p>
+                Choose your location, tap a quick button, or scan a code — the
+                entry hits your digital log instantly. Variants keep menus tidy,
+                and keyboard shortcuts let laptop sellers move as fast as tablet
+                crews.
+              </p>
+              <ul>
+                <li>Custom Quick Buttons for crowd-favorite items.</li>
+                <li>UPC and QR scans so totals stay precise.</li>
+                <li>Offline mode that keeps rolling through dead zones.</li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <h3>Numbers that add up before you pack up</h3>
+              <p>
+                Revenue, taxes, and tender types settle while you work. When the
+                booth closes, Vorbiz has already organized the day into export
+                ready summaries — no late-night spreadsheet clean-up required.
+              </p>
+              <ul>
+                <li>Location-aware tax rules for every market you attend.</li>
+                <li>Clean summaries that read like a polished notebook page.</li>
+                <li>Core logging, reporting, and backups are free forever.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+
+      <div id="brand-frame" class="section-anchor">
+        <section class="my-5">
+          <h2>From notebook to app — the Vorbiz frame</h2>
+        <div class="card p-4">
+          <div class="table-responsive">
+            <table class="table align-middle mb-0">
+              <thead>
+                <tr class="table-light">
+                  <th scope="col">Paper habit</th>
+                  <th scope="col">Vorbiz upgrade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Handwritten columns</td>
+                  <td>Tap-friendly log that feels familiar</td>
+                </tr>
+                <tr>
+                  <td>Midnight arithmetic</td>
+                  <td>Auto totals while the line is still moving</td>
+                </tr>
+                <tr>
+                  <td>Receipts piled for later</td>
+                  <td>Real-time snapshots and exports on demand</td>
+                </tr>
+                <tr>
+                  <td>“I’ll catch up tonight.”</td>
+                  <td>“It’s wrapped before the tent comes down.”</td>
+                </tr>
+                <tr>
+                  <td>Second-guessing tax math</td>
+                  <td>Location-aware confidence in every total</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </section>
+      </div>
+
+      <section class="my-5" aria-label="Vorbiz taglines">
+        <div class="card p-4">
+          <h2 class="h4">How we talk about Vorbiz</h2>
+          <p class="mb-3">
+            The voice is plainspoken and practical — like the vendor sharing a
+            thermos with you before the gates open. When you need a quick line,
+            reach for one of these:
           </p>
-
-          <h3>Items</h3>
-          <p>
-            Create items with a <strong>name</strong>, <strong>price</strong>,
-            and a <strong>UPC</strong> (12‑digit number). Vorbiz can generate a
-            <strong>QR label</strong> from the UPC so it always scans back to
-            the correct product. Toggle <strong>Quick Button</strong> for top
-            sellers.
-          </p>
-          <p>
-            Add <strong>variants</strong> (e.g., 8oz / 12oz / 16oz) to keep your
-            item list short. When an item has variants, the sale screen prompts
-            you to pick the right option before adding it to the cart.
-          </p>
-
-          <h3>Sale screen</h3>
-          <ul>
-            <li>
-              Select the active location; any Quick Buttons appear for one‑tap
-              adding.
-            </li>
-            <li>If an item has variants, you'll choose the option first.</li>
-            <li>Built‑in label scanning adds items instantly.</li>
-          </ul>
-
-          <h3>Managing sales</h3>
-          <p>
-            From the <strong>Sales List</strong>, you can update a sale's
-            <strong>date</strong> or <strong>location</strong>. If line items or
-            totals need changes, delete and recreate the sale with the correct
-            details.
-          </p>
-
-          <h3>Reporting</h3>
-          <ul>
-            <li><strong>Day Report</strong> – all sales for a single day.</li>
-            <li>
-              <strong>Date Range Report</strong> – summarized sales for any
-              period.
-            </li>
-            <li>
-              <strong>Sales Tax Report</strong> – tax collected by location for
-              easy filing.
-            </li>
-          </ul>
-
-          <h3>Keyboard shortcuts</h3>
-          <ul>
-            <li><span class="kbd">/</span> focuses the search bar</li>
-            <li><span class="kbd">Enter</span> adds the top search result</li>
-            <li>
-              <span class="kbd">Shift</span>+<span class="kbd">Enter</span>
-              completes the sale
-            </li>
-          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="chip">Your sales logbook, upgraded.</span>
+            <span class="chip">From notebook to app.</span>
+            <span class="chip">Sell today. File tomorrow.</span>
+            <span class="chip">No setup. No spreadsheets. No stress.</span>
+            <span class="chip">Track what you sell, right as you sell it.</span>
+          </div>
         </div>
       </section>
 
-      <section id="screenshots" class="my-5">
-        <h2>Screenshots</h2>
+      <div id="story" class="section-anchor">
+        <section class="my-5">
+          <h2>Written by a vendor, for vendors</h2>
+        <div class="card p-4">
+          <blockquote class="blockquote">
+            <p class="mb-3">
+              “I built Vorbiz because my notebook and spreadsheet kept failing
+              me. I wanted something a tired vendor could understand after a 12
+              hour day.”
+            </p>
+            <footer class="blockquote-footer">Joshua Wetzel, founder</footer>
+          </blockquote>
+          <p>
+            That promise still guides the roadmap. Vorbiz launches free, stays
+            available offline, and syncs to the cloud so you never lose a season
+            of sales data. When you’re ready for deeper insight, optional
+            upgrades wait in the wings — the core logbook stays put.
+          </p>
+          <p class="mb-0">
+            We’re not here to replace the way you hustle, just to make it more
+            durable. No POS gloss, no enterprise platform talk — just your
+            trusted logbook with a smarter memory.
+          </p>
+        </div>
+        </section>
+      </div>
+
+      <div id="screenshots" class="section-anchor">
+        <section class="my-5">
+          <h2>Screenshots</h2>
         <div class="row g-3">
           <div class="col-md">
             <figure class="shot">
               <img
                 src="./assets/screenshot1.jpg"
-                alt="Vorbiz sale screen"
+                alt="Vorbiz sale screen showing quick buttons"
                 class="img-fluid"
               />
               <figcaption class="figure-caption text-secondary p-2">
-                Sale screen with Quick Buttons and scanner
+                One-tap Quick Buttons keep your busiest market rush in rhythm.
               </figcaption>
             </figure>
           </div>
@@ -301,20 +437,23 @@
             <figure class="shot">
               <img
                 src="./assets/screenshot2.jpg"
-                alt="Vorbiz reporting screen"
+                alt="Vorbiz reporting screen with totals"
                 class="img-fluid"
               />
               <figcaption class="figure-caption text-secondary p-2">
-                Reporting overview (day, range, tax)
+                Day, range, and tax summaries that feel like a notebook page —
+                just smarter.
               </figcaption>
             </figure>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
 
-      <section id="terms" class="my-5">
-        <h2>Terms of Service – Vorbiz</h2>
-        <div class="card p-4 legal">
+      <div id="terms" class="section-anchor">
+        <section class="my-5">
+          <h2>Terms of Service – Vorbiz</h2>
+          <div class="card p-4 legal">
           <p><strong>Effective Date:</strong> September 17, 2025</p>
           <p>
             <strong>Provider:</strong> Joshua Wetzel, sole proprietorship (the
@@ -637,12 +776,14 @@
 
           <h3>Questions?</h3>
           <p>Email <a href="mailto:support@vorbiz.net">support@vorbiz.net</a>.</p>
-        </div>
-      </section>
+          </div>
+        </section>
+      </div>
 
-      <section id="privacy" class="my-5">
-        <h2>Privacy Policy – Vorbiz</h2>
-        <div class="card p-4 legal">
+      <div id="privacy" class="section-anchor">
+        <section class="my-5">
+          <h2>Privacy Policy – Vorbiz</h2>
+          <div class="card p-4 legal">
             <p><strong>Effective Date:</strong> September 08, 2025</p>
             <p>
               Vorbiz (“we,” “our,” or “us”) respects your privacy. This Privacy
@@ -845,6 +986,7 @@
             </p>
           </div>
         </section>
+      </div>
     </main>
 
     <footer class="container py-4 text-secondary">
