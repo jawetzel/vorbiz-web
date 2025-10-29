@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Vorbiz — Your Sales Logbook, Upgraded</title>
+  <link rel="icon" href="enhanced_icon_512.png" sizes="any" />
+
+  <!-- SEO -->
+  <meta name="description" content="Vorbiz is a digital sales logbook for market vendors. Tap instead of write. Auto totals, clean day & tax reports, offline-first. Free forever; pay only when you need more." />
+  <meta name="keywords" content="vendor sales logbook, farmers market sales app, sales tax report, offline sales tracking, small vendor bookkeeping" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vorbiz — Your Sales Logbook, Upgraded" />
+  <meta property="og:description" content="From notebook to app. Track what you sell, right as you sell it — no spreadsheets, no POS, no stress." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="feature-graphic.png" />
+  <meta name="theme-color" content="#00937a" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bs-body-bg:#f1f5f9;
+      --bs-body-color:#0f172a;
+      --bs-secondary-color:#475569;
+      --bs-primary:#00937a;
+      --bs-secondary:#f1f5f9;
+      --bs-info:#44b299;
+      --bs-warning:#db4814;
+      --bs-link-color:#00937a;
+      --bs-link-hover-color:#006d5b;
+    }
+    .navbar-dark .nav-link {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
+    }
+
+    .navbar-dark .nav-link:hover,
+    .navbar-dark .nav-link:focus {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .navbar-dark .nav-link.active {
+      color: #ffe9b0; /* subtle highlight for current section */
+    }
+
+    .navbar{background:var(--bs-primary);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+    .logo{width:22px;height:22px;border-radius:6px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+    .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem .75rem;border-radius:50rem;background:rgba(0,147,122,.1)}
+    .shot img{border-radius:1rem;border:1px solid rgba(203,213,225,.5);width:100%;height:auto}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:.8125rem;padding:.2rem .45rem;border:1px solid rgba(0,0,0,.2);border-bottom-width:2px;border-radius:6px;background:rgba(0,0,0,.05)}
+    .card{background:#fff;border-color:rgba(203,213,225,.5);border-radius:1rem}
+    .card p,.card ul{color:var(--bs-secondary-color)}
+    .legal{font-size:14px}
+    .eyebrow{letter-spacing:.08em;text-transform:uppercase}
+    .badge-free{background:#e6f6f2;color:#065f54;border:1px solid #bde6dc;border-radius:6px;padding:.25rem .5rem;font-size:.8rem}
+    .table>:not(caption)>*>*{vertical-align:middle}
+    .section-small{max-width:860px}
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+      <img src="./assets/enhanced_icon_512.png" alt="" class="logo" />
+      Vorbiz
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbars">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="./index.html#how">How it works</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#why">Why vendors use it</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="./index.html#screenshots">Screenshots</a></li>
+        <li class="nav-item"><a class="nav-link" href="./privacy-policy.html">Privacy</a></li>
+        <li class="nav-item"><a class="nav-link" href="./terms-of-service.html">Terms Of Service</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5">
+  <section id="privacy" class="my-5">
+    <h2>Privacy Policy – Vorbiz</h2>
+    <div class="card p-4 legal">
+      <p><strong>Effective Date:</strong> September 08, 2025</p>
+      <p>
+        Vorbiz (“we,” “our,” or “us”) respects your privacy. This Privacy
+        Policy explains how we collect, use, and protect information when
+        you use our app and services.
+      </p>
+      <h3>1. Information We Collect</h3>
+      <p>a. User Accounts &amp; Devices</p>
+      <ul>
+        <li>Email, name, and login details (via Supabase Authentication)</li>
+        <li>Device identifiers (used for secure sync between devices)</li>
+      </ul>
+      <p>b. App Usage &amp; Error Reporting</p>
+      <ul>
+        <li>Error logs, crash reports, and performance data (via Sentry)</li>
+        <li>Analytics related to app function and reliability</li>
+      </ul>
+      <p>c. Vendor Business Data (entered by you, the vendor)</p>
+      <ul>
+        <li>
+          Location details (business name, address, tax rates, contact
+          information)
+        </li>
+        <li>
+          Products (names, descriptions, pricing, categories, dimensions,
+          certifications, personalization options, etc.)
+        </li>
+        <li>Sales (dates, amounts, discounts, tax information, refunds)</li>
+        <li>
+          Sale line items (quantities, totals, taxes, product references)
+        </li>
+      </ul>
+      <p>d. Customer Data (entered by you, about your customers)</p>
+      <ul>
+        <li>
+          Name, business details (resale certificate, EIN, charity EIN if
+          applicable)
+        </li>
+        <li>Address, phone, email, contact person</li>
+      </ul>
+      <p>e. Communications</p>
+      <ul>
+        <li>
+          Messages you send us through in-app help requests (via Brevo
+          Email)
+        </li>
+        <li>
+          Subscription and billing information (via RevenueCat, depending on
+          purchase plan)
+        </li>
+      </ul>
+      <h3>2. How We Use Information</h3>
+      <p>We use the collected data to:</p>
+      <ul>
+        <li>
+          Provide and improve our services (syncing, reporting, account
+          management)
+        </li>
+        <li>Troubleshoot issues and monitor app performance</li>
+        <li>Communicate with you about support or important updates</li>
+        <li>Process subscriptions and payments</li>
+        <li>Maintain compliance with tax and business record requirements</li>
+      </ul>
+      <p>
+        We also use aggregated, de-identified data (information that cannot
+        reasonably be linked back to you, your customers, or your
+        transactions) to:
+      </p>
+      <ul>
+        <li>Generate statistical insights (e.g., sales trends by region)</li>
+        <li>Conduct research and business analysis</li>
+        <li>
+          Share with third parties such as government agencies, trade
+          associations, or research organizations
+        </li>
+      </ul>
+      <p>
+        We process vendor account, sales, and customer data to fulfill our
+        contract with you (providing the Vorbiz service) and under our
+        legitimate interests in improving reliability, securing the
+        platform, and preventing fraud. These bases help us respond to
+        data-protection requests in jurisdictions such as the EU and
+        California.
+      </p>
+      <h3>3. What We Do Not Do</h3>
+      <ul>
+        <li>
+          We do not sell or rent personally identifiable information (PII),
+          such as email addresses, phone numbers, EINs, or customer lists.
+        </li>
+        <li>
+          We do not give third parties direct access to your vendor, customer,
+          or sales records.
+        </li>
+        <li>
+          Any external reporting is based only on aggregated and anonymized
+          data.
+        </li>
+      </ul>
+      <h3>4. How We Share Information</h3>
+      <p>
+        We share data only with trusted service providers necessary for our
+        operations:
+      </p>
+      <ul>
+        <li>Supabase (authentication, database)</li>
+        <li>RevenueCat (subscription and billing)</li>
+        <li>Brevo (email communications)</li>
+        <li>Sentry (error logging and performance monitoring)</li>
+        <li>Google Play (identity verification, subscriptions, payments)</li>
+      </ul>
+      <p>
+        We may share aggregate, anonymized insights with third parties.
+        These insights never include personal identifiers of vendors or
+        customers.
+      </p>
+      <h3>5. Your Responsibilities as a Vendor</h3>
+      <p>
+        If you input customer data into Vorbiz, you are responsible for
+        having permission or a lawful basis to collect and use that
+        information. Under GDPR-style frameworks, you act as the data
+        controller for your customers’ information, and Vorbiz acts as the
+        data processor handling that information on your behalf.
+      </p>
+      <h3>6. Data Retention</h3>
+      <p>
+        We retain sales and business data in line with our Terms of
+        Service:
+      </p>
+      <ul>
+        <li>
+          <strong>Hot storage (active data):</strong> accessible for 5
+          years through the app.
+        </li>
+        <li>
+          <strong>Cold storage (archived data):</strong> retained for up
+          to an additional 10 years and available only upon request by
+          emailing <a href="mailto:support@vorbiz.net">support@vorbiz.net</a>.
+        </li>
+      </ul>
+      <p>
+        The cloud server copy of your workspace is the authoritative
+        record. Local device storage is a synced replica that is cleared
+        when you log out. Backups follow the same retention window.
+      </p>
+      <p>
+        Upon account deletion, data may be archived according to this
+        schedule unless law requires earlier deletion.
+      </p>
+      <h3>7. Your Rights</h3>
+      <p>Depending on your location (e.g., California, EU), you may have rights to:</p>
+      <ul>
+        <li>Access, correct, or delete your data</li>
+        <li>Export your data</li>
+        <li>Restrict or object to certain processing</li>
+        <li>
+          Opt out of the sale or sharing of your personal information (if
+          applicable)
+        </li>
+      </ul>
+      <p>
+        To exercise these rights, contact us at
+        <a href="mailto:support@vorbiz.net">support@vorbiz.net</a>.
+      </p>
+      <h3>8. Security</h3>
+      <p>
+        We use industry-standard security measures to protect your
+        information, including encryption in transit and access controls. No
+        system is 100% secure, but we work to safeguard your data.
+      </p>
+      <h3>9. International Transfers</h3>
+      <p>
+        We may process and store information in the United States and in
+        other countries where our service providers operate. By using
+        Vorbiz, you acknowledge that your data may be transferred outside
+        your region, including to jurisdictions that may have different
+        data-protection rules.
+      </p>
+      <h3>10. Children’s Privacy</h3>
+      <p>
+        Vorbiz is not intended for children under 13, and we do not knowingly
+        collect data from them.
+      </p>
+      <h3>11. Updates to This Policy</h3>
+      <p>
+        We may update this Privacy Policy from time to time. Significant
+        changes (such as new ways we share or use data) will be communicated
+        in-app or on our website.
+      </p>
+      <h3>12. Contact Us</h3>
+      <p>
+        If you have questions, contact:<br />
+        📧 <a href="mailto:support@vorbiz.net">support@vorbiz.net</a>
+      </p>
+      <h3>13. Dispute Resolution</h3>
+      <p>
+        Disputes regarding this Privacy Policy follow the same governing
+        law and binding arbitration terms outlined in our Terms of Service,
+        including the application of Louisiana law.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="container py-4 text-secondary">
+  <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+    <div>© <span id="y"></span> Vorbiz</div>
+    <div>Built for markets and vendor booths</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  (function(){const yEl=document.getElementById("y");if(yEl) yEl.textContent=new Date().getFullYear();})();
+</script>
+
+<!--
+  Notes:
+  - Replace CTA href="#" with real TestFlight/Play links when live.
+  - If you split Privacy to its own page, keep a short blurb here and link out.
+  - All copy avoids "POS / platform / analytics" per brand rules. Tone = vendor-to-vendor.
+-->
+</body>
+</html>
