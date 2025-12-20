@@ -124,8 +124,8 @@
                 <div class="accordion-body text-secondary">
                   You can download Vorbiz directly from your device’s app store:
                   <ul>
-                    <li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.vorbizapp" target="_blank" rel="noopener noreferrer">Get it on Google Play</a></li>
-                    <li><strong>iPhone / iPad:</strong> <a href="https://apps.apple.com/app/idXXXXXXXX" target="_blank" rel="noopener noreferrer">Download on the App Store</a></li>
+                    <li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=com.vorbizapp" target="_blank" rel="noopener noreferrer" data-appstore-link="google">Get it on Google Play</a></li>
+                    <li><strong>iPhone / iPad:</strong> <a href="https://apps.apple.com/app/idXXXXXXXX" target="_blank" rel="noopener noreferrer" data-appstore-link="apple">Download on the App Store</a></li>
                   </ul>
                   If you’re on a phone or tablet, just tap the link above and it will open your store automatically. If you don’t see Vorbiz listed yet, it may still be rolling out in your region — check back soon or contact support for early access.
                 </div>
@@ -353,6 +353,21 @@
       } finally {
         setLoading(false);
       }
+    });
+  })();
+</script>
+<script>
+  (function(){
+    document.querySelectorAll('[data-appstore-link]').forEach((link)=>{
+      link.addEventListener('click',()=>{
+        if (typeof gtag !== 'function') {
+          return;
+        }
+        gtag('event','appstore_click',{
+          app_store:link.dataset.appstoreLink,
+          link_url:link.href
+        });
+      });
     });
   })();
 </script>
