@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Vorbiz — Your Sales Logbook & Sales Tracking System</title>
+  <title>Vorbiz — Simple Sales Tracking for Market Vendors</title>
   <link rel="icon" href="enhanced_icon_512.png" sizes="any" />
 
   <!-- SEO -->
-  <meta name="description" content="Offline sales logbook app for farmers markets, craft fairs, and vendor booths. Track sales, get end-of-day totals, and generate sales-tax reports without POS hardware. Available on iOS and Android." />
+  <meta name="description" content="Offline sales tracking app for farmers markets, craft fairs, and vendor booths. Track sales, totals, and tax-ready summaries without POS hardware. Available on iOS and Android." />
   <meta name="keywords" content="sales logbook,market vendor app,craft fair sales tracker,farmers market sales,tax report app">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Vorbiz – Sales Logbook for Market Vendors & Craft Fairs" />
-  <meta property="og:description" content="From notebook to app. Track what you sell with an electronic logbook and lightweight cashier machine app — no spreadsheets, no POS, no stress." />
+  <meta property="og:title" content="Vorbiz – Simple Sales Tracking for Market Vendors" />
+  <meta property="og:description" content="Track sales fast at markets and fairs. Works offline. Totals automatically. Clean tax reports." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="feature-graphic.png" />
   <meta name="theme-color" content="#00937a" />
@@ -26,7 +26,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-KM97Z38TZQ');
   </script>
 
@@ -34,12 +33,12 @@
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1559952768360102');
     fbq('track', 'PageView');
   </script>
@@ -52,46 +51,82 @@
       --bs-secondary-color:#475569;
       --bs-primary:#00937a;
       --bs-secondary:#f1f5f9;
-      --bs-info:#44b299;
+      --bs-info:#0f766e;
       --bs-warning:#db4814;
       --bs-link-color:#00937a;
       --bs-link-hover-color:#006d5b;
     }
-    .navbar-dark .nav-link {
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 600;
-    }
-
-    .navbar-dark .nav-link:hover,
-    .navbar-dark .nav-link:focus {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .navbar-dark .nav-link.active {
-      color: #ffe9b0; /* subtle highlight for current section */
-    }
 
     .navbar{background:var(--bs-primary);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+    .navbar-dark .nav-link { color: rgba(255, 255, 255, 0.95); font-weight: 600; }
+    .navbar-dark .nav-link:hover,
+    .navbar-dark .nav-link:focus { color: #ffffff; text-decoration: none; }
+    .navbar-dark .nav-link.active { color: #ffe9b0; }
+
     .logo{width:22px;height:22px;border-radius:6px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
-    .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem .75rem;border-radius:50rem;background:rgba(0,147,122,.1)}
-    .shot img{border-radius:1rem;border:1px solid rgba(203,213,225,.5);width:100%;height:auto}
-    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:.8125rem;padding:.2rem .45rem;border:1px solid rgba(0,0,0,.2);border-bottom-width:2px;border-radius:6px;background:rgba(0,0,0,.05)}
-    .card{background:#fff;border-color:rgba(203,213,225,.5);border-radius:1rem}
+
+    .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.7rem;color:var(--bs-info)}
+    .hero h1{font-weight:650;line-height:1.1;letter-spacing:-0.02em;max-width:540px}
+    .hero .lead{font-size:1.05rem}
+
+    .chip{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      background:#f8fafc;
+      border:1px solid rgba(203,213,225,.9);
+      color:#0f172a;
+      font-weight:600;
+      font-size:.9rem;
+    }
+
+    .shot img{border-radius:1rem;border:1px solid rgba(203,213,225,.7);width:100%;height:auto}
+
+    .card{background:#fff;border:1px solid rgba(203,213,225,.75);border-radius:1rem}
     .card p,.card ul{color:var(--bs-secondary-color)}
-    .legal{font-size:14px}
-    .eyebrow{letter-spacing:.08em;text-transform:uppercase}
-    .badge-free{background:#e6f6f2;color:#065f54;border:1px solid #bde6dc;border-radius:6px;padding:.25rem .5rem;font-size:.8rem}
     .table>:not(caption)>*>*{vertical-align:middle}
-    .section-small{max-width:860px}
+
+    .comparison td{padding:.4rem .75rem}
+    .comparison .pain{font-weight:700;color:#020617}
+
+    .final-cta{border-top:1px solid rgba(203,213,225,.8);padding-top:2.25rem;margin-top:2.25rem}
+    .small-muted{font-size:.92rem;color:var(--bs-secondary-color)}
+
+    @media (min-width: 992px) {
+      /* Ensure the row stretches columns to the same height */
+      .hero {
+        align-items: stretch !important;
+      }
+
+      /* Make both hero columns flex columns */
+      .hero .col-lg-7,
+      .hero .col-lg-5 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Stretch the left card to fill its column */
+      .hero .col-lg-7 .card {
+        flex: 1 1 auto;
+      }
+
+      /* Use consistent spacing on the right column */
+      .hero .col-lg-5 {
+        gap: 1rem;
+      }
+
+      /* Push the "Why vendors switch" section to the bottom */
+      .hero .col-lg-5 #why {
+        margin-top: auto;
+      }
+    }
   </style>
 </head>
 <body>
-<!-- Meta Pixel Code -->
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
+               src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
+
 <!-- NAV -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container">
@@ -104,7 +139,7 @@ src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
     </button>
     <div class="collapse navbar-collapse" id="navbars">
       <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="./index">Vorbiz</a></li>
+        <li class="nav-item"><a class="nav-link active" href="./index">Vorbiz</a></li>
         <li class="nav-item"><a class="nav-link" href="./help-request">Get help</a></li>
         <li class="nav-item"><a class="nav-link" href="./privacy-policy">Privacy</a></li>
         <li class="nav-item"><a class="nav-link" href="./terms-of-service">Terms Of Service</a></li>
@@ -114,28 +149,32 @@ src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
 </nav>
 
 <main class="container my-5">
-  <!-- HERO -->
-  <section class="row align-items-center g-4">
+
+  <!-- HERO ROW -->
+  <section class="row align-items-start g-4 hero">
+
+    <!-- LEFT: MESSAGE + CTA -->
     <div class="col-lg-7">
       <div class="card p-4">
-        <div class="eyebrow small fw-bold text-info">Your sales logbook, upgraded</div>
-        <h1 class="display-5 mt-2">From notebook to app — same flow, less math.</h1>
-        <p class="mt-2">
-          Vorbiz is the <strong>digital logbook</strong> and lightweight <strong>sales tracking system</strong> for market vendors. You tap instead of write, and it
-          <strong>totals as you go</strong> — so your day report and sales-tax numbers are already done when you close.
+        <div class="eyebrow fw-bold">Made for real market days</div>
+
+        <h1 class="display-5 mt-2">
+          Simple sales tracking for markets and fairs
+        </h1>
+
+        <p class="mt-3 lead">
+          Track sales, costs, and totals as you sell — so you leave the market knowing where you actually stand.
         </p>
+
         <p class="mt-2 text-secondary">
-          Think of it as an <strong>electronic logbook</strong> that feels like the <strong>e log book</strong> you already trust, plus the clarity of modern <strong>sales tracking tools</strong> without bulky POS gear.
+          No spreadsheets. No POS hardware. Just a fast, simple app that fits how you already work.
         </p>
+
         <div class="d-flex flex-wrap gap-2 mt-3">
-          <span class="chip">Tap, sell, done</span>
-          <span class="chip">Auto totals</span>
-          <span class="chip">Clean tax reports</span>
-          <span class="chip">No POS hardware</span>
-          <span class="chip">Online log book</span>
+          <span class="chip">Works offline</span>
+          <span class="chip">Fast tap entry</span>
+          <span class="chip">Automatic totals</span>
         </div>
-
-
 
         <div id="download" class="mt-4 d-flex flex-wrap align-items-center gap-3">
           <div class="d-flex flex-wrap align-items-center gap-3">
@@ -150,158 +189,121 @@ src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
               <img
                       src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                       alt="Get it on Google Play"
-                      style="height: 40px; width: auto;"
+                      style="height: 50px; width: auto;"
               />
             </a>
           </div>
-          <p class="text-secondary mb-0 w-100 mt-2 fw-semibold">Install Now on the Apple App Store &amp; Google Play</p>
-          <small class="text-secondary d-block w-100">
-            Works fully offline. Sign up to back up your data for free.
-          </small>
+
+          <p class="text-secondary mb-0 w-100 mt-2 fw-semibold">
+            Download the app — free to start
+          </p>
+          <p class="small-muted mb-0">
+            Works offline at markets. Clean tax reports. No ads.
+          </p>
         </div>
-
-
-        <!--
-        <div id="download" class="mt-4 d-flex flex-wrap align-items-center gap-3">
-          <a href="https://apps.apple.com/app/id6753637365" target="_blank" rel="noopener">
-            <img
-                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                    alt="Download on the App Store"
-                    style="height: 40px; width: auto;"
-            />
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.vorbiz.app" target="_blank" rel="noopener">
-            <img
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                    alt="Get it on Google Play"
-                    style="height: 40px; width: auto;"
-            />
-          </a>
-          <small class="text-secondary d-block w-100 mt-2">
-            Works fully offline. Sign up to back up your data for free.
-          </small>
-        </div>
-        -->
-
-
       </div>
     </div>
+
+    <!-- RIGHT: IMAGE + WHY SWITCH (STACKED) -->
     <div class="col-lg-5">
-      <figure class="shot">
+      <figure class="shot mb-0">
         <img src="./assets/feature-graphic.png" alt="Vorbiz feature graphic" class="img-fluid" />
       </figure>
-    </div>
-  </section>
 
-  <!-- WHY VENDORS USE IT -->
-  <section id="why" class="my-5 mx-auto">
-    <h2>Why vendors use Vorbiz</h2>
-    <div class="card p-4">
-      <div class="table-responsive">
-        <table class="table align-middle">
-          <thead>
-          <tr>
-            <th class="text-secondary">Old world</th>
-            <th class="text-secondary">Vorbiz world</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr><td>Notebook</td><td><strong>Digital Logbook</strong></td></tr>
-          <tr><td>Hand math</td><td><strong>Auto totals</strong></td></tr>
-          <tr><td>End-of-day chaos</td><td><strong>Real-time clarity</strong></td></tr>
-          <tr><td>“I’ll do it later”</td><td><strong>“It’s already done.”</strong></td></tr>
-          <tr><td>Guesswork</td><td><strong>Confidence</strong></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="mb-0 text-secondary">Not a POS. No hardware. Just the logbook you already trust — with a brain.</p>
-    </div>
-  </section>
+      <!-- WHY VENDORS SWITCH (NOW UNDER IMAGE, SAME COLUMN) -->
+      <section id="why">
+        <div class="card p-3">
+          <div class="d-flex align-items-baseline justify-content-between mb-2">
+            <h2 class="h6 mb-0" style="font-weight: 800; letter-spacing: -0.01em;">
+              Why vendors switch
+            </h2>
+            <span class="text-secondary small">Old → New</span>
+          </div>
 
-  <!-- USE CASES -->
-  <section class="my-5 mx-auto">
-    <h2>Made for markets and fairs</h2>
-    <div class="card p-4 section-small">
-      <p class="mb-3">Vorbiz doubles as a <strong>market application</strong> and <strong>craft fair application</strong> companion, keeping every booth organized with an <strong>online log book</strong> you can trust.</p>
-      <p class="mb-0">Vendors get a <strong>free cash register app</strong> feel with none of the clutter, so your <strong>sales tracking tools</strong> always match the way you sell in person.</p>
-    </div>
-  </section>
+          <div class="table-responsive">
+            <table class="table align-middle comparison comparison-compact mb-2">
+              <thead>
+              <tr>
+                <th class="text-secondary">Old world</th>
+                <th class="text-secondary">Vorbiz world</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr><td class="pain">Notebook</td><td><strong>Tap-to-track sales</strong></td></tr>
+              <tr><td class="pain">Hand math</td><td><strong>Auto totals</strong></td></tr>
+              <tr><td class="pain">End-of-day chaos</td><td><strong>Real-time clarity</strong></td></tr>
+              <tr><td class="pain">“I’ll do it later”</td><td><strong>“It’s already done.”</strong></td></tr>
+              <tr><td class="pain">Guesswork</td><td><strong>Confidence</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
 
-  <!-- PRICING / MODEL -->
-  <section id="pricing" class="my-5 mx-auto">
-    <h2>Free forever. Pay when it’s worth it.</h2>
-    <div class="row g-3">
-      <div class="col-md">
-        <div class="card p-4 h-100">
-          <h3 class="h5 mb-2">Free</h3>
-          <ul class="mb-0">
-            <li>Create locations & products</li>
-            <li>Cost Breakdowns</li>
-            <li>Record & manage sales</li>
-            <li>Profit Reports</li>
-            <li>Day report + last/this month tax reports</li>
-            <li>Works fully offline</li>
-            <li>Optional free cloud backup when you sign up</li>
-          </ul>
+          <p class="mb-0 text-secondary small">
+            Vorbiz replaces the notebook — without changing how you sell.
+          </p>
         </div>
-      </div>
-      <div class="col-md">
-        <div class="card p-4 h-100 border-2">
-          <h3 class="h5 mb-2">Plus (optional)</h3>
-          <ul class="mb-0">
-            <li>Deeper reports & comparisons</li>
-            <li>Report Exports</li>
-          </ul>
-          <small class="text-secondary d-block mt-2">Upgrade only if you need more insight. The core logbook stays the same.</small>
-        </div>
-      </div>
+      </section>
+
     </div>
+
   </section>
 
-  <!-- SCREENSHOTS -->
-  <section id="screenshots" class="my-5">
-    <div class="row g-3">
-      <div class="col-md">
-        <figure class="shot">
-          <img src="./assets/screenshot2.jpg" alt="Vorbiz sale screen" class="img-fluid"/>
-          <figcaption class="figure-caption text-secondary p-2">Sale screen with Quick Buttons and scanner</figcaption>
-        </figure>
-      </div>
-      <div class="col-md">
-        <figure class="shot">
-          <img src="./assets/screenshot1.jpg" alt="Vorbiz reporting screen" class="img-fluid"/>
-          <figcaption class="figure-caption text-secondary p-2">Reporting overview (day, range, tax)</figcaption>
-        </figure>
-      </div>
-      <div class="col-md">
-        <figure class="shot">
-          <img src="./assets/screenshot3.jpg" alt="Vorbiz cost breakdown screen" class="img-fluid"/>
-          <figcaption class="figure-caption text-secondary p-2">Cost Breakdown Tool</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDER NOTE -->
+  <!-- REAL MARKET DAYS + FINAL CTA -->
   <section class="my-5 mx-auto">
-    <h2>Built by a vendor, for vendors</h2>
+    <h2 class="mb-3">Designed for real market days</h2>
     <div class="card p-4">
-      <p class="mb-0">“I built Vorbiz to replace the notebook I was already using — not to invent something new. I wanted a register that made sense to a tired vendor at the end of a hot day.”</p>
+      <ul class="mb-0">
+        <li>Works without internet at markets</li>
+        <li>Fast enough for busy booths</li>
+        <li><strong>No ads. Ever.</strong></li>
+        <li><strong>Free to start. Pay only if you want more reports.</strong></li>
+      </ul>
+    </div>
+
+    <div class="final-cta text-center">
+      <h2 class="mb-2">Ready for your next market?</h2>
+      <p class="text-secondary mb-4">Install Vorbiz and start tracking your sales today.</p>
+
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+        <a href="https://apps.apple.com/us/app/vorbiz/id6753637365" data-append-utm="true" data-appstore-link="apple">
+          <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="Download on the App Store"
+                  style="height: 40px; width: auto;"
+          />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.vorbiz.app" data-append-utm="true" data-appstore-link="google">
+          <img
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                  style="height: 50px; width: auto;"
+          />
+        </a>
+      </div>
+
+      <p class="text-secondary small mt-3 mb-0">
+        Free to start. Works offline at markets.
+      </p>
     </div>
   </section>
+
 </main>
 
 <footer class="container py-4 text-secondary">
   <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
     <div>© <span id="y"></span> Vorbiz</div>
     <div>Built for markets and vendor booths</div>
-    <div>Vorbiz is used by farmers market vendors, craft fair sellers, festival booths, and pop-up shops as their everyday sales logbook and tax report helper.</div>
+    <div>Track sales. Know your totals. Leave confident.</div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  (function(){const yEl=document.getElementById("y");if(yEl) yEl.textContent=new Date().getFullYear();})();
+  (function(){
+    const yEl=document.getElementById("y");
+    if(yEl) yEl.textContent=new Date().getFullYear();
+  })();
+
   (function(){
     const allowedParams=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
     const incomingParams=new URLSearchParams(window.location.search);
@@ -329,16 +331,16 @@ src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
       link.href=url.toString();
     });
   })();
+
   (function(){
     document.querySelectorAll('[data-appstore-link]').forEach((link)=>{
       link.addEventListener('click',()=>{
-        if (typeof gtag !== 'function') {
-          return;
+        if (typeof gtag === 'function') {
+          gtag('event','appstore_click',{
+            app_store:link.dataset.appstoreLink,
+            link_url:link.href
+          });
         }
-        gtag('event','appstore_click',{
-          app_store:link.dataset.appstoreLink,
-          link_url:link.href
-        });
         if (typeof fbq === 'function') {
           fbq('trackCustom', 'app_store_outbound_click', {
             platform: link.dataset.appstoreLink === 'apple' ? 'ios' : 'android'
@@ -349,11 +351,5 @@ src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
   })();
 </script>
 
-<!--
-  Notes:
-  - Replace CTA href="#" with real TestFlight/Play links when live.
-  - If you split Privacy to its own page, keep a short blurb here and link out.
-  - All copy avoids "POS / platform / analytics" per brand rules. Tone = vendor-to-vendor.
--->
 </body>
 </html>
