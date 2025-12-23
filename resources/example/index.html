@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Vorbiz — Resource Template Example</title>
+  <link rel="icon" href="../../assets/enhanced_icon_512.png" sizes="any" />
+
+  <!-- SEO -->
+  <meta name="description" content="Template example for Vorbiz vendor resources." />
+  <meta name="keywords" content="vendor resources, template, example" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vorbiz — Resource Template Example" />
+  <meta property="og:description" content="A sample resource page layout for Vorbiz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="../../assets/feature-graphic.png" />
+  <meta name="theme-color" content="#00937a" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KM97Z38TZQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KM97Z38TZQ');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1559952768360102');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root{
+      --bs-body-bg:#f1f5f9;
+      --bs-body-color:#0f172a;
+      --bs-secondary-color:#475569;
+      --bs-primary:#00937a;
+      --bs-secondary:#f1f5f9;
+      --bs-info:#0f766e;
+      --bs-warning:#db4814;
+      --bs-link-color:#00937a;
+      --bs-link-hover-color:#006d5b;
+    }
+
+    .navbar{background:var(--bs-primary);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+    .navbar-dark .nav-link { color: rgba(255, 255, 255, 0.95); font-weight: 600; }
+    .navbar-dark .nav-link:hover,
+    .navbar-dark .nav-link:focus { color: #ffffff; text-decoration: none; }
+    .navbar-dark .nav-link.active { color: #ffe9b0; }
+
+    .logo{width:22px;height:22px;border-radius:6px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+
+    .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.7rem;color:var(--bs-info)}
+    .hero h1{font-weight:650;line-height:1.1;letter-spacing:-0.02em;max-width:540px}
+    .hero .lead{font-size:1.05rem}
+
+    .card{background:#fff;border:1px solid rgba(203,213,225,.75);border-radius:1rem}
+    .card p,.card ul{color:var(--bs-secondary-color)}
+
+    .resource-image{
+      aspect-ratio: 4 / 5;
+      border-radius: 1rem;
+      border: 1px solid rgba(203,213,225,.75);
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=1559952768360102&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../../index">
+      <img src="../../assets/enhanced_icon_512.png" alt="" class="logo" />
+      Vorbiz
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbars">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="../../index">Vorbiz</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../help-request">Get help</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../privacy-policy">Privacy</a></li>
+        <li class="nav-item"><a class="nav-link" href="../../terms-of-service">Terms Of Service</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5">
+  <section class="hero">
+    <div class="card p-4 p-lg-5">
+      <div class="eyebrow fw-bold">Template layout</div>
+      <h1 class="display-5 mt-2">Resource Page Example</h1>
+      <p class="mt-3 lead">
+        This page is a formatting template for future vendor resources. The content below is placeholder text, but the
+        layout, spacing, and balance between long-form copy and supporting imagery should be reused.
+      </p>
+    </div>
+  </section>
+
+  <section class="row g-4 align-items-start mt-4">
+    <div class="col-lg-7">
+      <div class="card p-4 p-lg-5">
+        <h2 class="h4 mb-3">Sample long-form copy</h2>
+        <p>
+          Use this column for detailed guidance, checklists, or narrative explanations that vendors can read through at
+          their own pace. The sample copy here is intentionally long so you can see how paragraphs stack, how headings
+          breathe, and how the text feels at both desktop and mobile sizes. The goal is to keep the reading experience
+          calm and clear, with enough spacing to avoid a wall of text while still supporting long-form guidance.
+        </p>
+        <p>
+          Consider starting each resource with a short overview, followed by a set of actionable steps or sections.
+          Each section can include subheadings, bullets, or short callouts. For example, a pricing guide might open with
+          why pricing confidence matters, then walk through cost of goods, time, and margin targets before closing with
+          a quick summary or checklist. Keep sentences concise and avoid jargon so the content is approachable for new
+          vendors who may be learning these concepts for the first time.
+        </p>
+        <p>
+          You can also use this space to include definitions, examples, or common pitfalls. If a vendor is preparing to
+          file quarterly estimates, highlight the dates to remember, the records to keep, and the types of documents to
+          save after each market day. If a vendor is thinking about switching payment tools, outline how to compare
+          transaction fees, device reliability, and offline workflows. Think of this as the primary narrative thread for
+          the resource and let the right-hand image support the theme.
+        </p>
+        <p>
+          The best resources feel like a helpful guide from another vendor rather than a textbook. Write in a steady,
+          encouraging tone and reinforce that vendors can take one step at a time. Break the content into digestible
+          paragraphs, add lists when it helps clarify steps, and leave enough white space so the page is inviting. When
+          you build new pages from this template, replace this text with the real guidance and adjust the headings to
+          match the topic.
+        </p>
+        <p>
+          Finally, keep the length around five hundred words so the page feels substantial without overwhelming the
+          reader. If the topic needs more depth, consider splitting it into separate subpages linked from the main
+          resources hub. That way the navigation stays clear, and vendors can jump directly to the sections that matter
+          most to them.
+        </p>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <img class="resource-image" src="../../assets/screenshot1.jpg" alt="Sample vendor resource imagery" />
+    </div>
+  </section>
+</main>
+
+<footer class="container py-4 text-secondary">
+  <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap">
+    <div>© <span id="y"></span> Vorbiz</div>
+    <div><a class="text-secondary text-decoration-none" href="../">Vendor Resources</a></div>
+    <div>Built for markets and vendor booths</div>
+    <div>Track sales. Know your totals. Leave confident.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  (function(){
+    const yEl=document.getElementById("y");
+    if(yEl) yEl.textContent=new Date().getFullYear();
+  })();
+</script>
+
+</body>
+</html>
