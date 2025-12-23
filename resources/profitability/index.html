@@ -48,6 +48,49 @@
     .card{background:#fff;border:1px solid rgba(203,213,225,.75);border-radius:1rem}
     .card p,.card ul{color:var(--bs-secondary-color)}
 
+    .topic-wall{
+      margin-top: .25rem;
+      border-top: 1px solid rgba(203,213,225,.75);
+      padding-top: 1rem;
+    }
+
+    .topic-list{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      columns: 1;
+      column-gap: 2rem;
+    }
+
+    @media (min-width: 768px){
+      .topic-list{ columns: 2; }
+    }
+    @media (min-width: 1200px){
+      .topic-list{ columns: 2; }
+    }
+
+    .topic-list li{
+      break-inside: avoid;
+      padding: .35rem 0;
+      border-bottom: 1px dashed rgba(203,213,225,.7);
+    }
+
+    .topic-list li:last-child{
+      border-bottom: 0;
+    }
+
+    .topic-list a{
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .topic-list a:hover{
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .resource-image{
       aspect-ratio: 4 / 5;
       border-radius: 1rem;
@@ -322,51 +365,28 @@
   <section class="row g-4 align-items-start mt-4">
     <div class="col-lg-7">
       <div class="card p-4 p-lg-5">
-        <h2 class="h4 mb-3">Featured question</h2>
-        <p>
-          Start with ROI to compare products side-by-side and decide where to invest your next restock budget.
-        </p>
-        <div class="d-flex flex-column gap-2">
-          <a class="text-decoration-none" href="./do-you-calculate-roi-for-each-product-or-category/index.html">
-            Do you calculate ROI for each product or category?
-          </a>
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+          <div>
+            <h2 class="h4 mb-1">Explore profitability topics</h2>
+            <p class="mb-0 text-secondary">
+              A searchable index of profitability questions for market vendors.
+            </p>
+          </div>
+          <div class="text-secondary small">
+            <span id="topicCount">—</span> topics
+            <span class="mx-2">•</span>
+            Updated <time datetime="2025-01-15">Jan 15, 2025</time>
+          </div>
         </div>
-      <div class="card p-4 p-lg-5 h-100">
-        <h2 class="h4 mb-3">Featured questions</h2>
-        <p class="text-secondary">
-          Each resource breaks down the costs, time, and revenue impact of real vendor decisions so you can compare your
-          options with confidence.
-        </p>
-        <ul class="mb-0">
-          <li>
-            <a class="text-decoration-none" href="./is-it-better-to-do-a-few-big-shows-or-many-smaller-ones/index.html">
-              Is it better to do a few big shows or many smaller ones?
-            </a>
-          </li>
-        </ul>
-      <div class="card p-4 p-lg-5">
-        <h2 class="h4 mb-3">Start with the most common question</h2>
-        <p>
-          Every vendor asks the same thing after a long day: was it worth it? These resources walk through net profit,
-          hourly pay, and goal-based targets so you can compare shows with confidence.
-        </p>
-        <div class="mt-4">
-          <h3 class="h5">Explore profitability questions</h3>
-          <ul class="mb-0">
-            <li>
-              <a class="text-decoration-none" href="./is-it-more-profitable-to-sell-many-low-priced-items-or-fewer-high-priced/index.html">
-                Is it more profitable to sell many low-priced items or fewer high-priced ones?
-              </a>
-            </li>
+
+        <div class="topic-wall">
+          <ul class="topic-list" id="topicList">
+            <li><a href="./do-you-calculate-roi-for-each-product-or-category/index.html">Do you calculate ROI for each product or category?</a></li>
+            <li><a href="./is-it-better-to-do-a-few-big-shows-or-many-smaller-ones/index.html">Is it better to do a few big shows or many smaller ones?</a></li>
+            <li><a href="./is-it-more-profitable-to-sell-many-low-priced-items-or-fewer-high-priced/index.html">Is it more profitable to sell many low-priced items or fewer high-priced ones?</a></li>
+            <li><a href="./what-do-you-consider-a-good-show-profit-wise/index.html">What do you consider a good show profit-wise?</a></li>
           </ul>
         </div>
-        <ul class="mb-0">
-          <li>
-            <a class="text-decoration-none" href="./what-do-you-consider-a-good-show-profit-wise/index.html">
-              What do you consider a good show profit-wise?
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
   </section>
@@ -615,6 +635,12 @@
   (function(){
     const yEl=document.getElementById("y");
     if(yEl) yEl.textContent=new Date().getFullYear();
+
+    const list=document.getElementById("topicList");
+    const countEl=document.getElementById("topicCount");
+    if(list && countEl){
+      countEl.textContent = list.querySelectorAll("a[href]").length.toString();
+    }
   })();
 </script>
 

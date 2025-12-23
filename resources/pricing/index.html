@@ -48,6 +48,49 @@
     .card{background:#fff;border:1px solid rgba(203,213,225,.75);border-radius:1rem}
     .card p,.card ul{color:var(--bs-secondary-color)}
 
+    .topic-wall{
+      margin-top: .25rem;
+      border-top: 1px solid rgba(203,213,225,.75);
+      padding-top: 1rem;
+    }
+
+    .topic-list{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      columns: 1;
+      column-gap: 2rem;
+    }
+
+    @media (min-width: 768px){
+      .topic-list{ columns: 2; }
+    }
+    @media (min-width: 1200px){
+      .topic-list{ columns: 2; }
+    }
+
+    .topic-list li{
+      break-inside: avoid;
+      padding: .35rem 0;
+      border-bottom: 1px dashed rgba(203,213,225,.7);
+    }
+
+    .topic-list li:last-child{
+      border-bottom: 0;
+    }
+
+    .topic-list a{
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .topic-list a:hover{
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .resource-image{
       aspect-ratio: 4 / 5;
       border-radius: 1rem;
@@ -153,31 +196,64 @@
   <section class="row g-4 align-items-start mt-4">
     <div class="col-lg-7">
       <div class="card p-4 p-lg-5">
-        <h2 class="h4 mb-3">Explore pricing topics</h2>
-        <ul class="list-unstyled mb-0">
-          <li class="mb-3">
-            <a class="fw-semibold text-decoration-none" href="can-should-i-charge-extra-for-card-fees-or-give-a-cash-discount/index.html">
-              Can I charge extra for card fees or offer a cash discount?
-            </a>
-            <p class="mb-0">
-              Learn how to stay on the right side of the rules while keeping customer trust and protecting your margin.
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+          <div>
+            <h2 class="h4 mb-1">Explore pricing topics</h2>
+            <p class="mb-0 text-secondary">
+              A searchable index of pricing questions from market vendors.
             </p>
-          </li>
-        <h2 class="h4 mb-3">Pricing scenarios</h2>
-        <p>
-          Explore the questions vendors ask most often when pricing their work. Each guide is written to help you quote
-          confidently, protect your time, and keep profits steady.
-        </p>
-        <ul class="mb-0">
-          <li><a href="./how-to-price-custom-or-personalized-items-at-the-fair/index.html">How to price custom or personalized items at the fair</a></li>
-        <h2 class="h4 mb-3">Featured pricing guidance</h2>
-        <p class="text-secondary">
-          Each article uses the same template structure to highlight the emotional reality, the math behind the
-          decision, and a repeatable way to set prices with confidence.
-        </p>
-        <ul class="mb-0">
-          <li><a class="text-decoration-none" href="./is-it-better-to-use-round-numbers-for-prices/index.html">Is it better to use round numbers for prices?</a></li>
-        </ul>
+          </div>
+          <div class="text-secondary small">
+            <span id="topicCount">—</span> topics
+            <span class="mx-2">•</span>
+            Updated <time datetime="2025-01-15">Jan 15, 2025</time>
+          </div>
+        </div>
+
+        <div class="topic-wall">
+          <ul class="topic-list" id="topicList">
+            <li><a href="./can-should-i-charge-extra-for-card-fees-or-give-a-cash-discount/index.html">Can I charge extra for card fees or offer a cash discount?</a></li>
+            <li><a href="./do-you-ever-haggle-or-negotiate-prices-at-your-booth/index.html">Do you ever haggle or negotiate prices at your booth?</a></li>
+            <li><a href="./how-often-should-i-reevaluate-or-change-my-prices/index.html">How often should I reevaluate or change my prices?</a></li>
+            <li><a href="./how-should-i-price-high-end-vs-low-end-items/index.html">How should I price high-end vs. low-end items?</a></li>
+            <li><a href="./how-to-price-compared-to-other-vendors-or-competition/index.html">How to price compared to other vendors or competition</a></li>
+            <li><a href="./should-i-offer-a-discount-for-multiple-items/index.html">Should I offer a discount for multiple items?</a></li>
+            <li><a href="./what-formula-should-i-use-to-set-prices/index.html">What formula should I use to set prices?</a></li>
+            <li><a href="./how-to-price-custom-or-personalized-items-at-the-fair/index.html">How to price custom or personalized items at the fair</a></li>
+            <li><a href="./is-it-better-to-use-round-numbers-for-prices/index.html">Is it better to use round numbers for prices?</a></li>
+            <li><a href="./should-i-ever-have-a-show-special-price/index.html">Should I ever have a show special price?</a></li>
+            <li><a href="./how-can-i-tell-if-my-prices-are-too-high-or-too-low/index.html">How can I tell if my prices are too high or too low?</a></li>
+            <li><a href="./should-i-build-sales-tax-into-my-prices-or-add-it-at-checkout/index.html">Should I build sales tax into my prices or add it at checkout?</a></li>
+            <li><a href="./what-price-range-sells-best-at-fairs/index.html">What price range sells best at fairs?</a></li>
+            <li><a href="./how-to-price-items-sold-as-a-set-or-bundle/index.html">How to price items sold as a set or bundle</a></li>
+            <li><a href="./how-do-i-price-small-vs-large-products-fairly/index.html">How do I price small vs. large products fairly?</a></li>
+            <li><a href="./should-i-charge-extra-for-on-the-spot-personalization/index.html">Should I charge extra for on-the-spot personalization?</a></li>
+            <li><a href="./lots-of-people-browse-but-dont-buy-could-prices-be-the-problem/index.html">Lots of people browse but don&apos;t buy—could prices be the problem?</a></li>
+            <li><a href="./do-you-change-prices-based-on-venue-or-location/index.html">Do you change your prices based on the venue or location?</a></li>
+            <li><a href="./is-having-a-clearance-or-sale-bin-a-good-idea/index.html">Is having a clearance or sale bin a good idea?</a></li>
+            <li><a href="./how-do-you-handle-customers-who-say-its-too-expensive/index.html">How do you handle customers who say &ldquo;It&rsquo;s too expensive&rdquo;?</a></li>
+            <li><a href="./do-you-ever-raise-prices-on-an-item-thats-selling-out/index.html">Do you ever raise prices on an item that&rsquo;s selling out?</a></li>
+            <li><a href="./should-i-use-99-or-50-endings-or-round-numbers/index.html">Should I set prices ending in .99 or .50, or use round numbers?</a></li>
+            <li><a href="./how-to-factor-the-booth-fee-into-product-pricing/index.html">How to factor the booth fee into my product pricing?</a></li>
+            <li><a href="./my-items-are-very-low-cost-can-i-make-enough-money/index.html">My items are very low-cost ($1–$5)—can I make enough money?</a></li>
+            <li><a href="./how-do-i-price-for-wholesale-versus-retail/index.html">How do I price for wholesale versus retail?</a></li>
+            <li><a href="./should-i-price-differently-for-consignment-vs-booth/index.html">Should I price differently for consignment in shops vs. my booth?</a></li>
+            <li><a href="./how-do-i-price-artisan-food-or-farm-products/index.html">How do I price my artisan food or farm products at a farmers market?</a></li>
+            <li><a href="./if-the-market-charges-a-sales-commission-should-i-raise-prices/index.html">If the market charges a sales commission, should I raise prices?</a></li>
+            <li><a href="./should-i-clearly-display-all-prices-or-have-customers-ask/index.html">Should I clearly display all prices, or have customers ask?</a></li>
+            <li><a href="./is-having-a-range-of-prices-important/index.html">Is having a range of prices (low to high) important?</a></li>
+            <li><a href="./how-do-i-price-unique-one-of-a-kind-art-pieces/index.html">How do I price unique, one-of-a-kind art pieces versus simpler crafts?</a></li>
+            <li><a href="./how-can-i-stay-profitable-when-material-costs-increase/index.html">How can I stay profitable when my material costs increase?</a></li>
+            <li><a href="./do-handmade-items-have-a-cap-in-my-local-market/index.html">Do handmade items have a “cap” in my local market?</a></li>
+            <li><a href="./what-do-i-do-if-i-realize-i-underpriced-an-item-after-it-sold-out/index.html">What do I do if I realize I underpriced an item after it sold out immediately?</a></li>
+            <li><a href="./how-do-i-explain-my-prices-vs-mass-produced-goods/index.html">How do I explain my prices to customers who compare to mass-produced goods?</a></li>
+            <li><a href="./should-prices-at-a-craft-fair-match-online-prices/index.html">Should prices at a craft fair match online prices?</a></li>
+            <li><a href="./do-you-run-sales-or-promotions-at-craft-fairs/index.html">Do you run sales or promotions at craft fairs?</a></li>
+            <li><a href="./should-i-ever-lower-prices-during-a-slow-show/index.html">Should I ever lower prices during a slow show?</a></li>
+            <li><a href="./is-x-too-much-or-too-little-to-charge-for-my-product/index.html">Is X too much or too little to charge for my product?</a></li>
+            <li><a href="./how-do-i-price-my-handmade-items-for-a-craft-fair/index.html">How do I price my handmade items for a craft fair?</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-lg-5">
@@ -306,6 +382,12 @@
   (function(){
     const yEl=document.getElementById("y");
     if(yEl) yEl.textContent=new Date().getFullYear();
+
+    const list=document.getElementById("topicList");
+    const countEl=document.getElementById("topicCount");
+    if(list && countEl){
+      countEl.textContent = list.querySelectorAll("a[href]").length.toString();
+    }
   })();
 </script>
 
