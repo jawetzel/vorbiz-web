@@ -124,30 +124,64 @@
 </nav>
 
 <main class="container my-5">
+  <nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="../index.html">Vendor Resources</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Bookkeeping questions</li>
+    </ol>
+  </nav>
+
   <section class="hero">
     <div class="card p-4 p-lg-5">
       <div class="eyebrow fw-bold">Bookkeeping resources</div>
-      <h1 class="display-5 mt-2">Bookkeeping questions vendors ask most</h1>
-      <p class="mt-3 lead">
+      <h1 class="display-5 mt-2">Bookkeeping questions</h1>
+      <p class="meta text-secondary small mb-3">Updated <time datetime="2025-01-15">Jan 15, 2025</time></p>
+      <p class="mt-1 lead">
         Get clear, practical guidance on how to track sales, expenses, and receipts without drowning in paperwork.
       </p>
+      <div class="d-flex flex-wrap gap-3 small">
+        <a class="text-decoration-none fw-semibold" href="#featured">Featured</a>
+        <span class="text-secondary">•</span>
+        <a class="text-decoration-none fw-semibold" href="#all-questions">All questions</a>
+      </div>
     </div>
   </section>
 
-  <section class="row g-4 align-items-start mt-4">
+  <section id="featured" class="mt-4">
+    <div class="card p-4">
+      <h2 class="h5">Featured bookkeeping guides</h2>
+      <p class="mb-3 text-secondary">
+        Start with these essentials to build a repeatable bookkeeping routine.
+      </p>
+      <div class="d-flex flex-column gap-2">
+        <a class="text-decoration-none" href="./do-you-use-a-spreadsheet-or-accounting-app/index.html">
+          Do you just use a spreadsheet or pen-and-paper, or invest in an accounting app?
+        </a>
+        <a class="text-decoration-none" href="./any-tips-for-tracking-what-sells-during-the-day/index.html">
+          Any tips for tracking what sells during the day?
+        </a>
+        <a class="text-decoration-none" href="./how-do-you-keep-track-of-cash-sales/index.html">
+          How do you keep track of cash sales?
+        </a>
+        <a class="text-decoration-none" href="./what-software-do-you-use-to-track-sales-and-expenses/index.html">
+          What software do you use to track sales and expenses?
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="all-questions" class="row g-4 align-items-start mt-4">
     <div class="col-lg-7">
       <div class="card p-4 p-lg-5">
         <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
           <div>
-            <h2 class="h4 mb-1">Explore bookkeeping topics</h2>
+            <h2 class="h4 mb-1">All bookkeeping questions</h2>
             <p class="mb-0 text-secondary">
               A searchable index of common bookkeeping questions from market vendors.
             </p>
           </div>
           <div class="text-secondary small">
-            <span id="topicCount">—</span> topics
-            <span class="mx-2">•</span>
-            Updated <time datetime="2025-01-15">Jan 15, 2025</time>
+            <span id="topicCount">—</span> questions
           </div>
         </div>
 
@@ -201,13 +235,16 @@
       <img class="resource-image" src="../../assets/screenshot1.jpg" alt="Vendor bookkeeping overview" />
     </div>
   </section>
+
   <section class="mt-5">
     <div class="card p-4 p-lg-5">
-      <div class="eyebrow fw-bold">Keep reading</div>
-      <h2 class="h5 mt-2">Related resources</h2>
-      <div class="d-flex flex-column gap-2 mt-3">
-        <a class="fw-semibold" href="if-you-give-away-items-how-to-record-that/index.html">If you give away some items or do freebies, how to record that?</a>
-        <a class="fw-semibold" href="is-there-a-simple-template-for-craft-business-finances/index.html">Is there a simple template for craft business finances?</a>
+      <h2 class="h5">Other topics</h2>
+      <p class="mb-3 text-secondary">Explore more vendor question hubs.</p>
+      <div class="d-flex flex-column gap-2">
+        <a class="fw-semibold" href="../profitability/index.html">Profitability questions</a>
+        <a class="fw-semibold" href="../pricing/index.html">Pricing questions</a>
+        <a class="fw-semibold" href="../taxes/index.html">Taxes &amp; licensing questions</a>
+        <a class="fw-semibold" href="../cash-flow/index.html">Cash flow questions</a>
       </div>
     </div>
   </section>
