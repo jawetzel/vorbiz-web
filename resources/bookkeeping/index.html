@@ -48,6 +48,49 @@
     .card{background:#fff;border:1px solid rgba(203,213,225,.75);border-radius:1rem}
     .card p,.card ul{color:var(--bs-secondary-color)}
 
+    .topic-wall{
+      margin-top: .25rem;
+      border-top: 1px solid rgba(203,213,225,.75);
+      padding-top: 1rem;
+    }
+
+    .topic-list{
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      columns: 1;
+      column-gap: 2rem;
+    }
+
+    @media (min-width: 768px){
+      .topic-list{ columns: 2; }
+    }
+    @media (min-width: 1200px){
+      .topic-list{ columns: 2; }
+    }
+
+    .topic-list li{
+      break-inside: avoid;
+      padding: .35rem 0;
+      border-bottom: 1px dashed rgba(203,213,225,.7);
+    }
+
+    .topic-list li:last-child{
+      border-bottom: 0;
+    }
+
+    .topic-list a{
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .topic-list a:hover{
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .resource-image{
       aspect-ratio: 4 / 5;
       border-radius: 1rem;
@@ -94,209 +137,64 @@
   <section class="row g-4 align-items-start mt-4">
     <div class="col-lg-7">
       <div class="card p-4 p-lg-5">
-        <h2 class="h4 mb-3">Explore bookkeeping topics</h2>
-        <ul class="mb-0">
-          <li>
-            <a href="./do-you-use-a-spreadsheet-or-accounting-app/index.html">
-              Do you just use a spreadsheet or pen-and-paper, or invest in an accounting app?
-            </a>
-          </li>
-          <li>
-            <a href="./any-tips-for-tracking-what-sells-during-the-day/index.html">
-              Any tips for tracking what sells during the day?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-account-for-unsold-inventory-in-your-books/index.html">
-              How do you account for unsold inventory in your books?
-            </a>
-          </li>
-          <li>
-            <a href="./if-you-give-away-items-how-to-record-that/index.html">
-              If you give away some items or do freebies, how to record that?
-            </a>
-          </li>
-          <li>
-            <a href="./whats-your-method-for-reconciling-after-a-show/index.html">
-              What’s your method for reconciling after a show?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-keep-a-log-of-each-fairs-performance/index.html">
-              Do you keep a log of each fair’s performance?
-            </a>
-          </li>
-          <li>
-            <a href="./how-long-do-you-keep-financial-records/index.html">
-              How long do you keep financial records?
-            </a>
-          </li>
-          <li>
-            <a href="./when-should-i-consider-hiring-a-bookkeeper-or-accountant/index.html">
-              When (if ever) should I consider hiring a bookkeeper or accountant?
-            </a>
-          </li>
-          <li>
-            <a href="./do-most-of-you-do-your-own-taxes-or-get-an-accountant/index.html">
-              Do most of you do your own taxes or get an accountant?
-            </a>
-          </li>
-          <li>
-            <a href="./are-there-any-good-apps-for-tracking-expenses-on-the-go/index.html">
-              Are there any good apps for tracking expenses on the go?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-i-track-online-vs-in-person-sales-together/index.html">
-              How do I track online vs. in-person sales together?
-            </a>
-          </li>
-          <li>
-            <a href="./any-recommendations-for-free-or-cheap-bookkeeping-solutions/index.html">
-              Any recommendations for free or cheap bookkeeping solutions for a small craft biz?
-            </a>
-          </li>
-          <li>
-            <a href="./if-someone-helps-at-my-booth-how-do-i-account-for-paying-them/index.html">
-              If someone helps at my booth, how do I account for paying them?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-handle-bookkeeping-when-sharing-a-booth/index.html">
-              How do you handle bookkeeping when sharing a booth or doing a collaborative sale?
-            </a>
-          </li>
-          <li>
-            <a href="./should-i-track-each-craft-fairs-profitability-separately/index.html">
-              Should I track each craft fair’s profitability separately?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-i-categorize-mixed-expenses/index.html">
-              How do I categorize mixed expenses?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-count-your-time-in-your-bookkeeping/index.html">
-              Do you count your time in your bookkeeping anywhere?
-            </a>
-          </li>
-          <li>
-            <a href="./whats-your-bookkeeping-routine-around-craft-fairs/index.html">
-              What’s your bookkeeping routine around craft fairs?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-manage-finances-with-multiple-product-lines/index.html">
-              How do you manage finances if you have multiple product lines or revenue streams?
-            </a>
-          </li>
-          <li>
-            <a href="./if-i-take-an-order-to-deliver-later-how-do-i-record-it/index.html">
-              If I take an order at a fair to deliver later, how do I record it?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-handle-bookkeeping-at-year-end/index.html">
-              How do you handle bookkeeping at year-end?
-            </a>
-          </li>
-          <li>
-            <a href="./what-reports-or-metrics-do-you-regularly-look-at/index.html">
-              What reports or metrics do you regularly look at?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-keep-track-of-cash-sales/index.html">
-              How do you keep track of cash sales?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-record-each-sale-or-total-up-at-end/index.html">
-              Do you record each sale individually or just total up at the end of the event?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-track-inventory-across-events-and-online/index.html">
-              How do you track your inventory across events and online?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-keep-business-finances-separate-from-personal/index.html">
-              Do you keep business finances separate from personal?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-organize-receipts-and-invoices/index.html">
-              How do you organize your receipts and invoices?
-            </a>
-          </li>
-          <li>
-            <a href="./what-categories-do-you-use-for-expenses/index.html">
-              What categories do you use for expenses?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-track-mileage-or-car-expenses-for-craft-fairs/index.html">
-              Do you track mileage or car expenses for craft fairs?
-            </a>
-          </li>
-          <li>
-            <a href="./how-often-do-you-update-your-books/index.html">
-              How often do you update your books?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-calculate-profit-per-event/index.html">
-              Do you calculate profit per event?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-handle-bookkeeping-with-a-partner-or-helper/index.html">
-              How do you handle bookkeeping if you have a partner or helper sharing the booth?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-record-square-or-paypal-fees-in-your-books/index.html">
-              How do you record Square/PayPal fees in your books?
-            </a>
-          </li>
-          <li>
-            <a href="./how-do-you-record-sales-tax-collected/index.html">
-              What about sales tax collected – how do you record that?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-use-any-inventory-management-tools-or-software/index.html">
-              Do you use any inventory management tools or software?
-            </a>
-          </li>
-          <li>
-            <a href="./what-info-do-you-record-for-each-transaction/index.html">
-              What info do you record for each transaction?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-integrate-pos-with-bookkeeping/index.html">
-              Do you integrate your point-of-sale (like Square) with bookkeeping?
-            </a>
-          </li>
-          <li>
-            <a href="./is-there-a-simple-template-for-craft-business-finances/index.html">
-              Is there a simple template for craft business finances?
-            </a>
-          </li>
-          <li>
-            <a href="./do-you-track-which-products-are-most-profitable-or-just-total-sales/index.html">
-              Do you track which products are most profitable or just total sales?
-            </a>
-          </li>
-          <li>
-            <a href="./what-software-do-you-use-to-track-sales-and-expenses/index.html">
-              What software do you use to track sales and expenses?
-            </a>
-          </li>
-        </ul>
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+          <div>
+            <h2 class="h4 mb-1">Explore bookkeeping topics</h2>
+            <p class="mb-0 text-secondary">
+              A searchable index of common bookkeeping questions from market vendors.
+            </p>
+          </div>
+          <div class="text-secondary small">
+            <span id="topicCount">—</span> topics
+            <span class="mx-2">•</span>
+            Updated <time datetime="2025-01-15">Jan 15, 2025</time>
+          </div>
+        </div>
+
+        <div class="topic-wall">
+          <ul class="topic-list" id="topicList">
+            <li><a href="./do-you-use-a-spreadsheet-or-accounting-app/index.html">Do you just use a spreadsheet or pen-and-paper, or invest in an accounting app?</a></li>
+            <li><a href="./any-tips-for-tracking-what-sells-during-the-day/index.html">Any tips for tracking what sells during the day?</a></li>
+            <li><a href="./how-do-you-account-for-unsold-inventory-in-your-books/index.html">How do you account for unsold inventory in your books?</a></li>
+            <li><a href="./if-you-give-away-items-how-to-record-that/index.html">If you give away some items or do freebies, how to record that?</a></li>
+            <li><a href="./whats-your-method-for-reconciling-after-a-show/index.html">What’s your method for reconciling after a show?</a></li>
+            <li><a href="./do-you-keep-a-log-of-each-fairs-performance/index.html">Do you keep a log of each fair’s performance?</a></li>
+            <li><a href="./how-long-do-you-keep-financial-records/index.html">How long do you keep financial records?</a></li>
+            <li><a href="./when-should-i-consider-hiring-a-bookkeeper-or-accountant/index.html">When (if ever) should I consider hiring a bookkeeper or accountant?</a></li>
+            <li><a href="./do-most-of-you-do-your-own-taxes-or-get-an-accountant/index.html">Do most of you do your own taxes or get an accountant?</a></li>
+            <li><a href="./are-there-any-good-apps-for-tracking-expenses-on-the-go/index.html">Are there any good apps for tracking expenses on the go?</a></li>
+            <li><a href="./how-do-i-track-online-vs-in-person-sales-together/index.html">How do I track online vs. in-person sales together?</a></li>
+            <li><a href="./any-recommendations-for-free-or-cheap-bookkeeping-solutions/index.html">Any recommendations for free or cheap bookkeeping solutions for a small craft biz?</a></li>
+            <li><a href="./if-someone-helps-at-my-booth-how-do-i-account-for-paying-them/index.html">If someone helps at my booth, how do I account for paying them?</a></li>
+            <li><a href="./how-do-you-handle-bookkeeping-when-sharing-a-booth/index.html">How do you handle bookkeeping when sharing a booth or doing a collaborative sale?</a></li>
+            <li><a href="./should-i-track-each-craft-fairs-profitability-separately/index.html">Should I track each craft fair’s profitability separately?</a></li>
+            <li><a href="./how-do-i-categorize-mixed-expenses/index.html">How do I categorize mixed expenses?</a></li>
+            <li><a href="./do-you-count-your-time-in-your-bookkeeping/index.html">Do you count your time in your bookkeeping anywhere?</a></li>
+            <li><a href="./whats-your-bookkeeping-routine-around-craft-fairs/index.html">What’s your bookkeeping routine around craft fairs?</a></li>
+            <li><a href="./how-do-you-manage-finances-with-multiple-product-lines/index.html">How do you manage finances if you have multiple product lines or revenue streams?</a></li>
+            <li><a href="./if-i-take-an-order-to-deliver-later-how-do-i-record-it/index.html">If I take an order at a fair to deliver later, how do I record it?</a></li>
+            <li><a href="./how-do-you-handle-bookkeeping-at-year-end/index.html">How do you handle bookkeeping at year-end?</a></li>
+            <li><a href="./what-reports-or-metrics-do-you-regularly-look-at/index.html">What reports or metrics do you regularly look at?</a></li>
+            <li><a href="./how-do-you-keep-track-of-cash-sales/index.html">How do you keep track of cash sales?</a></li>
+            <li><a href="./do-you-record-each-sale-or-total-up-at-end/index.html">Do you record each sale individually or just total up at the end of the event?</a></li>
+            <li><a href="./how-do-you-track-inventory-across-events-and-online/index.html">How do you track your inventory across events and online?</a></li>
+            <li><a href="./do-you-keep-business-finances-separate-from-personal/index.html">Do you keep business finances separate from personal?</a></li>
+            <li><a href="./how-do-you-organize-receipts-and-invoices/index.html">How do you organize your receipts and invoices?</a></li>
+            <li><a href="./what-categories-do-you-use-for-expenses/index.html">What categories do you use for expenses?</a></li>
+            <li><a href="./do-you-track-mileage-or-car-expenses-for-craft-fairs/index.html">Do you track mileage or car expenses for craft fairs?</a></li>
+            <li><a href="./how-often-do-you-update-your-books/index.html">How often do you update your books?</a></li>
+            <li><a href="./do-you-calculate-profit-per-event/index.html">Do you calculate profit per event?</a></li>
+            <li><a href="./how-do-you-handle-bookkeeping-with-a-partner-or-helper/index.html">How do you handle bookkeeping if you have a partner or helper sharing the booth?</a></li>
+            <li><a href="./how-do-you-record-square-or-paypal-fees-in-your-books/index.html">How do you record Square/PayPal fees in your books?</a></li>
+            <li><a href="./how-do-you-record-sales-tax-collected/index.html">What about sales tax collected – how do you record that?</a></li>
+            <li><a href="./do-you-use-any-inventory-management-tools-or-software/index.html">Do you use any inventory management tools or software?</a></li>
+            <li><a href="./what-info-do-you-record-for-each-transaction/index.html">What info do you record for each transaction?</a></li>
+            <li><a href="./do-you-integrate-pos-with-bookkeeping/index.html">Do you integrate your point-of-sale (like Square) with bookkeeping?</a></li>
+            <li><a href="./is-there-a-simple-template-for-craft-business-finances/index.html">Is there a simple template for craft business finances?</a></li>
+            <li><a href="./do-you-track-which-products-are-most-profitable-or-just-total-sales/index.html">Do you track which products are most profitable or just total sales?</a></li>
+            <li><a href="./what-software-do-you-use-to-track-sales-and-expenses/index.html">What software do you use to track sales and expenses?</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-lg-5">
@@ -329,6 +227,12 @@
   (function(){
     const yEl=document.getElementById("y");
     if(yEl) yEl.textContent=new Date().getFullYear();
+
+    const list=document.getElementById("topicList");
+    const countEl=document.getElementById("topicCount");
+    if(list && countEl){
+      countEl.textContent = list.querySelectorAll("a[href]").length.toString();
+    }
   })();
 </script>
 
