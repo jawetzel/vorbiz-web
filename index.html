@@ -308,7 +308,19 @@
   })();
 
   (function(){
-    const allowedParams=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    const allowedParams=[
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_content',
+      'utm_term',
+      'fbclid',
+      'gclid',
+      'gbraid',
+      'wbraid',
+      'msclkid',
+      'ttclid'
+    ];
     const incomingParams=new URLSearchParams(window.location.search);
     const filtered=new URLSearchParams();
 
@@ -317,6 +329,8 @@
         filtered.set(key,incomingParams.get(key));
       }
     });
+
+    window.__attributionParams=Object.fromEntries(filtered.entries());
 
     if(!filtered.toString()){
       return;
@@ -343,15 +357,19 @@
         }
         event.preventDefault();
 
+        const attribution=window.__attributionParams || {};
+
         if (typeof gtag === 'function') {
           gtag('event','appstore_click',{
             app_store:link.dataset.appstoreLink,
-            link_url:link.href
+            link_url:link.href,
+            ...attribution
           });
         }
         if (typeof fbq === 'function') {
           fbq('trackCustom', 'app_store_outbound_click', {
-            platform: link.dataset.appstoreLink === 'apple' ? 'ios' : 'android'
+            platform: link.dataset.appstoreLink === 'apple' ? 'ios' : 'android',
+            ...attribution
           });
         }
 
